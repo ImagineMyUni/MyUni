@@ -4,7 +4,6 @@ import globalRouter from './router/globalRouter';
 import body_parser from 'body-parser';
 import cookie_parser from 'cookie-parser';
 
-
 const app = express();
 
 app.use(body_parser.urlencoded({ extended: true }));
