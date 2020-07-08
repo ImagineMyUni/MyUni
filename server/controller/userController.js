@@ -4,13 +4,15 @@ import crypto from 'crypto';
 import uuid4 from 'uuidv4';
 import jwt from 'jsonwebtoken';
 
+
+
 export const getLogin = (req, res) => {
     res.sendStatus(200);
 }
 
 export const postLogin = async (req, res) => {
     try {
-        const { userId, userPassword } = req.query;
+        const { userId, userPassword } = req.body;
         console.log(`PostLogin : ${userId}, ${userPassword}`);
     
         const userResult = await userModel.findOne({
