@@ -1,11 +1,9 @@
 import express from 'express';
-import router from '../router/router';
-import {
-    postLogin
-} from '../contorller/userController';
+import routes from '../router/routes';
+import { onlyPublic } from '../middleware/auth';
 
-
-const userRouter = express().router();
+const userRouter = express.Router();
+ 
 
 export default userRouter;
 

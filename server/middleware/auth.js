@@ -21,3 +21,9 @@ export const verifyToken = (req, res, next) => {
         })
     }
 }
+
+/* Only Public can access */ 
+export const onlyPublic = (req, res, next) => {
+    console.log(req.body);
+    next();
+}

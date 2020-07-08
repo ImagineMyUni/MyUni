@@ -1,13 +1,48 @@
-import routes from '../router/router';
+import routes from '../router/routes';
 import userModel from '../database/models/User';
 import crypto from 'crypto';
 import uuid4 from 'uuidv4';
 import jwt from 'jsonwebtoken';
+import User from '../database/models/User';
 
+export const getJoin = (_, res) => {
+    return res.render('join');
+}
 
+export const postJoin = async (req, res) => {
+    try {
+        const {
+            body: { userId, userName, userPassword, userPassword2 }
+        } = req;
+
+        if (userPassword === userPassword2) { // 회원가입 조건 충족했을 떄, 비밀번호는 하나의 예시일 뿐
+        /* 비밀 번호 일치했을 때 행동 */
+            console.log(userId);
+            await User.create(userId, userPassword, userName, 0);
+            res.status(200).json({
+                resultCode: 200,
+                message: "JoinSuccess"
+            });
+
+        } else {
+            /* 비밀번호가 일치하지 않았을 때 행동 */
+            res.status(200).json({
+                resultCode: 200,
+                message: "JoinFail"
+            })
+        }
+    } catch (err) {
+        console.log(err);
+        return res.status(400).json({
+            resultCode: 400,
+            message: "JoinFail"
+        })
+    }
+
+}
 
 export const getLogin = (req, res) => {
-    res.sendStatus(200);
+    return res.render('login'); 
 }
 
 export const postLogin = async (req, res) => {

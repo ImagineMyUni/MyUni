@@ -2,6 +2,7 @@
 // Global
 const HOME = "/";
 const LOGIN = "/login";
+const JOIN = "/join";
 
 // Users
 const USER = "/user";
@@ -9,14 +10,15 @@ const USER = "/user";
 const API = "/api";
 
 
-const router = {
+const routes = {
     home: HOME,
     login: LOGIN,
+    join: JOIN,
 
     user: USER,
     
     api: API
 };
 
-export default router; 
+export default routes; 
 

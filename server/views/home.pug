@@ -1,0 +1,8 @@
+extends layouts/main
+block content
+    .joinTest login Test
+    form(method="post")
+        input(type="text", name="userId", placeholder="userId")
+        input(type="password", name="userPassword", placeholder="password")
+        input(type="submit", value="Login")
+        a(href="http://localhost:4000/join") Join

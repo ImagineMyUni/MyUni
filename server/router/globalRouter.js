@@ -1,12 +1,16 @@
 import express from 'express';
-import router from './router';
-import { getLogin, postLogin } from '../controller/userController';
+import routes from './routes';
+import { getLogin, postLogin, getJoin, postJoin } from '../controller/userController';
+import { home } from '../controller/contentsController';
 
-const globalRouter = express();
+const globalRouter = express.Router();
 
-globalRouter.get(router.home, (req, res) => res.send("1"));
+globalRouter.get(routes.home, home);
 
-globalRouter.get(router.login, getLogin);
-globalRouter.post(router.login, postLogin);
+globalRouter.get(routes.login, getLogin);
+globalRouter.post(routes.login, postLogin);
+
+globalRouter.get(routes.join, getJoin);
+globalRouter.post(routes.join, postJoin);
 
 export default globalRouter;
