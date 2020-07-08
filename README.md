@@ -11,4 +11,5 @@
 | picture | 김재원 | Love | etc |
 | PICTURE | 김혜린 | Pray | Front End |
 | ME | 이종욱 | Eat | Front End |
+| Myself | 이예지 | Travel | Designer |
 

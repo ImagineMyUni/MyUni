@@ -2,7 +2,8 @@ import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 // bcrypt는 crypto보다 보안 수준 높지만 느림 
 // 그래서 비밀번호에만 쓸 예정
-import passportLocalMongoose from 'passport-local-mongoose';
+import async from 'async';
+const saltRounds = 10;
 
 const UserSchema = new mongoose.Schema({
     userId: { type: String, required: true, unique: true },
@@ -12,23 +13,33 @@ const UserSchema = new mongoose.Schema({
 });
 
 //create new User document and save into Mongo DB
-UserSchema.statics.create = (userId, userPassword, userName) => {
-    const newUser = new model({
-        userId,
-        userPassword,
-        userName,
-    });
+UserSchema.statics.create = async (userId, userPassword, userName) => {
+    await bcrypt.genSalt(saltRounds, (err, salt) => {
+        bcrypt.hash(userPassword, salt, (err, hash) => {
+            console.log(hash);
+            const newUser = new model({
+                userId,
+                userPassword: hash,
+                userName
+            })
 
-    return newUser.save();
+            return newUser.save();
+        })
+    });
+}
+
+UserSchema.statics.findOneByUserId = async (userId) => {
+    return await model.findOne({
+        userId
+    }).exec()
 }
 
 //verify password
-UserSchema.methods.verify = (password) => {
-    return null;
-}
-
-UserSchema.methods.findOneByUserId = (userId) => {
-    const user = model.findOne({ userId });
+UserSchema.statics.verifyPassword = async (dbPassword, userPassword) => {
+    return await bcrypt.compareSync(userPassword, dbPassword, (err, result) => {
+        if (err) console.log(err);
+        return result;
+    });
 }
 
 UserSchema.methods.assignAdmin = () => {

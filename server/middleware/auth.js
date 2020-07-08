@@ -3,10 +3,19 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-export const verifyToken = (req, res, next) => {
+export const authMiddleware = (req, res, next) => {
+
+    const token = req.headers['x-access-token'] || req.query.token;
+
+    if (!token) {
+        return res.status(403).json({
+            success: false,
+            message: 'NoToken'
+        });
+    }
     try {
-        req.decoded = jwt.verify(req.headers.auth, process.env.JWT_SECRET);
-        return next();
+        req.decoded = jwt.verify(token, process.env.JWT_SECRET);
+        return next(); 
     } catch (err) {
         if (err.name === 'TokenExpiredError') {
             return res.status(419).json({
