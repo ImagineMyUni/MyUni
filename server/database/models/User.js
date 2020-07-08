@@ -7,6 +7,6 @@ const UserSchema = new mongoose.Schema({
     userName: String,
 })
 
-const model = monoose.model("User", UserSchema);
+const model = mongoose.model("User", UserSchema);
 
 export default model;

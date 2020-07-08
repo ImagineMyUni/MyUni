@@ -8,6 +8,9 @@ const app = express();
 
 app.use(body_parser.urlencoded({ extended: true }));
 app.use(body_parser.json());
+app.use(cookie_parser);
+
 app.use(router.home, globalRouter);
+app.use(router.user, userRouter);
 
 export default app;
