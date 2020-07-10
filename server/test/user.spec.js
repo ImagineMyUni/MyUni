@@ -84,5 +84,3 @@ describe('Join Test', () => {
         })
     })
 });
-
-/* Converter Test */ 
