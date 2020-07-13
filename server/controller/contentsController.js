@@ -1,4 +1,6 @@
 
 export const home = (req, res) => {
-    return res.render('home');
+    console.log(req);
+    
+    return res.render('login');
 }

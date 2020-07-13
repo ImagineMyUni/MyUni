@@ -18,8 +18,7 @@ describe('User Schema Test', () => {
         m.validate(err => {
             chai.expect(err.errors.userId).to.exist;
             done();
-        });
-        
+        });        
     });
 })
 
@@ -73,6 +72,7 @@ describe('Join Test', () => {
                 })
         });
     });
+
     describe('Join Get Test', () => {
         it('Should Return 200 Status', done => {
             chai.request(app)
