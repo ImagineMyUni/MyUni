@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import routes from '../router/routes';
 
 dotenv.config();
 
@@ -33,6 +34,27 @@ export const authMiddleware = (req, res, next) => {
 
 /* Only Public can access */ 
 export const onlyPublic = (req, res, next) => {
-    console.log(req.body);
-    next();
+    if (req.user) {
+        res.redirect(routes.home);
+    } else {
+        next();
+    }
 }
+
+/* Only Private can access */
+export const onlyPrivate = (req, res, next) => {
+    if (req.user) {
+        next();
+    } else {
+        res.redirect(routes.login);
+    };
+};
+
+export const localsMiddleware = (req, res, next) => {
+    req.locals.siteName = "MyUni";
+    res.locals.routes = routes;
+    res.locals.loggedUser = req.user || null;
+    next();
+};
+
+
