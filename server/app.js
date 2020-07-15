@@ -10,6 +10,8 @@ import cookieSession from 'cookie-session';
 import globalRouter from './router/globalRouter';
 import userRouter from './router/userRouter';
 
+import { localsMiddleware } from './middleware/auth';
+
 import './passport-setup';
 
 const app = express();
@@ -24,7 +26,7 @@ app.use(cookieSession({
     keys: ['key1', 'key2'],
     expires: '1d'
 }));
-
+app.use(localsMiddleware);
 app.use(passport.initialize());
 
 // Take the cookie this will call deserialize, Taking the Id From the cookie

@@ -7,7 +7,7 @@ import bcrypt from 'bcrypt';
 import passport, { Passport } from 'passport';
 
 export const home = (req, res) => {
-    return res.render('login');
+    return res.render('home');
 }
 
 export const getJoin = (_, res) => {
@@ -128,7 +128,6 @@ export const getLogout = (req, res) => {
 export const googleLogin = passport.authenticate("google");
 export const googleLoginCallback= async (_, __, profile, cb) => {
     console.log(profile);
-    cb(null, null); 
     try {
         const user = await User.findOne({});
         if (user) {
@@ -149,3 +148,24 @@ export const googleLoginCallback= async (_, __, profile, cb) => {
 export const postGoogleLogin = (req, res) => {
     return res.redirect(routes.home);
 };
+
+export const kakaoLogin = passport.authenticate("kakao");
+export const kakaoLoginCallback = async (_, __, profile, cb) => {
+    console.log(profile);
+    const user = await User.findOne({});
+    return cb(null, user);
+}
+export const postKakaoLogin = (req, res) => {
+    return res.redirect(routes.home);
+}
+
+export const naverLogin = passport.authenticate("naver");
+export const naverLoginCallback = async (_, __, profile, cb) => {
+    console.log(profile);
+    const user = await User.findOne({});
+    return cb(null, user);
+}
+export const postNaverLogin = (req, res) => {
+
+    return res.redirect(routes.home);
+}

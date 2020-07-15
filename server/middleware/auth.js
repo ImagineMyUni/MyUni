@@ -41,7 +41,7 @@ export const onlyPublic = (req, res, next) => {
     }
 }
 
-/* Only Private can access */
+/* Only Private can access (Login)*/
 export const onlyPrivate = (req, res, next) => {
     if (req.user) {
         next();
@@ -51,7 +51,7 @@ export const onlyPrivate = (req, res, next) => {
 };
 
 export const localsMiddleware = (req, res, next) => {
-    req.locals.siteName = "MyUni";
+    res.locals.siteName = "MyUni";
     res.locals.routes = routes;
     res.locals.loggedUser = req.user || null;
     next();

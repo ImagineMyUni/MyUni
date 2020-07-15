@@ -14,20 +14,20 @@ const EDIT_PROFILE = "/:id/edit"
 const API = "/api";
 
 //Google
-const GOOGLE = "/auth/google";
-const GOOGLE_CALLBACK = "/auth/google/callback";
+const GOOGLE = "/oauth/google";
+const GOOGLE_CALLBACK = "/oauth/google/callback";
 
 //Facebook
-const FACEBOOK = "/auth/facebook";
-const FACEBOOK_CALLBACK = "/auth/facebook/callback";
+const FACEBOOK = "/oauth/facebook";
+const FACEBOOK_CALLBACK = "/oauth/facebook/callback";
 
 //Naver
-const NAVER = "/auth/naver";
-const NAVER_CALLBACK = "/auth/naver/callback";
+const NAVER = "/oauth/naver";
+const NAVER_CALLBACK = "/oauth/naver/callback";
 
 //Kakao
-const KAKAO = "/auth/kakao";
-const KAKAO_CALLBACK = "/auth/kakao/callback";
+const KAKAO = "/oauth/kakao";
+const KAKAO_CALLBACK = "/oauth/kakao/callback";
 
 const routes = {
     home: HOME,
@@ -45,9 +45,7 @@ const routes = {
     },
     editProfile: EDIT_PROFILE,
 
-
     api: API,
-
 
     google: GOOGLE,
     googleCallback: GOOGLE_CALLBACK,

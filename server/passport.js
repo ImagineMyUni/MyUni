@@ -6,16 +6,16 @@ import dotenv from 'dotenv'
 
 dotenv.config();
 
-const JwtStrategy = passportJwt.Strategy;
-const ExtractJwt = passportJwt.ExtractJwt;
+// const JwtStrategy = passportJwt.Strategy;
+// const ExtractJwt = passportJwt.ExtractJwt;
 
-const jwtOptions = {
-    // header의 bearToken 해석할 예정.
-    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(), 
-    secretOrKey: process.env.JWT_TOKEN // 복호화 방법
-};
+// const jwtOptions = {
+//     // header의 bearToken 해석할 예정.
+//     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(), 
+//     secretOrKey: process.env.JWT_TOKEN // 복호화 방법
+// };
 
-passport.use(User.createStrategy());
+// passport.use(User.createStrategy());
 
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
