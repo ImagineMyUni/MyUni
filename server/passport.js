@@ -10,8 +10,9 @@ const JwtStrategy = passportJwt.Strategy;
 const ExtractJwt = passportJwt.ExtractJwt;
 
 const jwtOptions = {
-    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-    secretOrKey: process.env.JWT_TOKEN
+    // header의 bearToken 해석할 예정.
+    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(), 
+    secretOrKey: process.env.JWT_TOKEN // 복호화 방법
 };
 
 passport.use(User.createStrategy());

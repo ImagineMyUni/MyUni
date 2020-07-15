@@ -4,6 +4,11 @@ import jwt from 'jsonwebtoken';
 import User from '../database/models/User';
 import async from 'async';
 import bcrypt from 'bcrypt';
+import passport, { Passport } from 'passport';
+
+export const home = (req, res) => {
+    return res.render('login');
+}
 
 export const getJoin = (_, res) => {
     return res.render('join');
@@ -114,3 +119,33 @@ export const postEditProfile = (req, res) => {
         message: "EditProfileSuccess"
     })
 }
+
+export const getLogout = (req, res) => {
+    req.session = null;
+    req.logout();
+    return res.redirect('/');
+}
+export const googleLogin = passport.authenticate("google");
+export const googleLoginCallback= async (_, __, profile, cb) => {
+    console.log(profile);
+    cb(null, null); 
+    try {
+        const user = await User.findOne({});
+        if (user) {
+            // If user be, add and save
+            return cb(null, user);
+        }
+
+        const newUser = await User.create({
+            // information
+            id: profile.id
+        });
+        return cb(null, newUser);
+    } catch (error) {
+        return cb(error);
+    }
+}
+
+export const postGoogleLogin = (req, res) => {
+    return res.redirect(routes.home);
+};

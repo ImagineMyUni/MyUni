@@ -26,7 +26,9 @@ app.use(cookieSession({
 }));
 
 app.use(passport.initialize());
-app.use(passport.session());
+
+// Take the cookie this will call deserialize, Taking the Id From the cookie
+app.use(passport.session()); 
 app.use(routes.home, globalRouter);
 app.use(routes.user, userRouter);
 

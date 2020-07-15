@@ -3,6 +3,7 @@
 const HOME = "/";
 const LOGIN = "/login";
 const JOIN = "/join";
+const LOGOUT = "/logout";
 
 // Users
 const USER = "/user";
@@ -32,6 +33,7 @@ const routes = {
     home: HOME,
     login: LOGIN,
     join: JOIN,
+    logout: LOGOUT,
 
     user: USER,
     userDetail: (id) => {
