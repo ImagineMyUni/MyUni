@@ -6,46 +6,49 @@ import async from 'async';
 const saltRounds = 10;
 
 const UserSchema = new mongoose.Schema({
-    userId: { type: String, required: true, unique: true },
-    userPassword: { type: String, requried: true },
+    userEmail: { type: String },
+    userId: { type: String, required: true },
+    // userPassword: { type: String, requried: true },
     userName: { type: String, required: true },
+
     admin: { type: Boolean, default: false }
 });
 
-//create new User document and save into Mongo DB
-UserSchema.statics.create = async (userId, userPassword, userName) => {
-    await bcrypt.genSalt(saltRounds, (err, salt) => {
-        bcrypt.hash(userPassword, salt, (err, hash) => {
-            console.log(hash);
-            const newUser = new model({
-                userId,
-                userPassword: hash,
-                userName
-            })
 
-            return newUser.save();
-        })
-    });
-}
+// //create new User document and save into Mongo DB
+// UserSchema.statics.create = async (userId, userPassword, userName) => {
+//     await bcrypt.genSalt(saltRounds, (err, salt) => {
+//         bcrypt.hash(userPassword, salt, (err, hash) => {
+//             console.log(hash);
+//             const newUser = new model({
+//                 userId,
+//                 userPassword: hash,
+//                 userName
+//             })
 
-UserSchema.statics.findOneByUserId = async (userId) => {
-    return await model.findOne({
-        userId
-    }).exec()
-}
+//             return newUser.save();
+//         })
+//     });
+// }
 
-//verify password
-UserSchema.statics.verifyPassword = async (dbPassword, userPassword) => {
-    return await bcrypt.compareSync(userPassword, dbPassword, (err, result) => {
-        if (err) console.log(err);
-        return result;
-    });
-}
+// UserSchema.statics.findOneByUserId = async (userId) => {
+//     return await model.findOne({
+//         userId
+//     }).exec()
+// }
 
-UserSchema.methods.assignAdmin = () => {
-    this.admin = true;
-    return this.save();
-}
+// //verify password
+// UserSchema.statics.verifyPassword = async (dbPassword, userPassword) => {
+//     return await bcrypt.compareSync(userPassword, dbPassword, (err, result) => {
+//         if (err) console.log(err);
+//         return result;
+//     });
+// }
+
+// UserSchema.methods.assignAdmin = () => {
+//     this.admin = true;
+//     return this.save();
+// }
 
 const model = mongoose.model("User", UserSchema);
 
