@@ -6,16 +6,20 @@ import async from 'async';
 const saltRounds = 10;
 
 const UserSchema = new mongoose.Schema({
-    userEmail: { type: String },
-    userId: { type: String, required: true },
+    email: { type: String },
+    // id: { type: String, required: true },
     // userPassword: { type: String, requried: true },
-    userName: { type: String, required: true },
+    name: { type: String, required: true },
+    admin: { type: Boolean, default: false },
 
-    admin: { type: Boolean, default: false }
+    facebookId: String,
+    naverId: String,
+    kakaoId: String,
+    googleId: String,
+
 });
 
-
-// //create new User document and save into Mongo DB
+//create new User document and save into Mongo DB
 // UserSchema.statics.create = async (userId, userPassword, userName) => {
 //     await bcrypt.genSalt(saltRounds, (err, salt) => {
 //         bcrypt.hash(userPassword, salt, (err, hash) => {
