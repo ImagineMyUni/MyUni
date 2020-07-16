@@ -23,8 +23,10 @@ app.use(logger('dev'));
 app.use(helmet());
 app.use(cookieSession({
     name: 'MyUni-Session',
-    keys: ['key1', 'key2'],
-    expires: '1d'
+    keys: process.env.JWT_TOKEN,
+    cookie: {
+        maxAge: 1000 * 60 * 60 // 유효시간 1시간
+    }
 }));
 app.use(localsMiddleware);
 app.use(passport.initialize());

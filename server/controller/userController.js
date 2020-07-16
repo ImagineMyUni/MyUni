@@ -151,7 +151,7 @@ export const postGoogleLogin = (req, res) => {
 
 export const kakaoLogin = passport.authenticate("kakao");
 export const kakaoLoginCallback = async (_, __, profile, cb) => {
-    console.log(profile);
+    console.log("kakaoLogin", profile);
     const user = await User.findOne({});
     return cb(null, user);
 }
@@ -161,11 +161,20 @@ export const postKakaoLogin = (req, res) => {
 
 export const naverLogin = passport.authenticate("naver");
 export const naverLoginCallback = async (_, __, profile, cb) => {
-    console.log(profile);
+    console.log("naver Profile, ", profile);
     const user = await User.findOne({});
     return cb(null, user);
 }
 export const postNaverLogin = (req, res) => {
+    return res.redirect(routes.home);
+}
 
+export const facebookLogin = passport.authenticate("facebook");
+export const facebookLoginCallback = async (_, __, profile, cb) => {
+    console.log("facebookLoign", profile);
+    const user = await User.findOne({});
+    return cb(null, user);
+}
+export const postFacebookLogin = (req, res) => {
     return res.redirect(routes.home);
 }

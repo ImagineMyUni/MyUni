@@ -49,6 +49,8 @@ const routes = {
 
     google: GOOGLE,
     googleCallback: GOOGLE_CALLBACK,
+    facebook: FACEBOOK,
+    facebookCallback: FACEBOOK_CALLBACK,
     naver: NAVER,
     naverCallback: NAVER_CALLBACK,
     kakao: KAKAO,
