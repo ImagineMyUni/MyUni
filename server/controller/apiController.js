@@ -1,6 +1,7 @@
 import University from '../database/models/University';
 
-export const postScoreConverter =  (req, res) => {
+export const postScoreConverter = (req, res) => {
+    console.log(req.body);
     let resultScore = 0, convertedScore;
     const {
         universityName, score
@@ -35,4 +36,8 @@ export const postScoreConverter =  (req, res) => {
         });
 
     };
+}
+
+export const getScoreConverter = (req, res) => {
+    return res.render('converter', { pageTitle: 'converter' });
 }

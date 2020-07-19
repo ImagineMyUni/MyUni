@@ -1,0 +1,26 @@
+extends layouts/main
+block content
+    p convertert Test
+    form(action='/api/converter', method = 'POST')
+        p Univeristy
+        input(type='text' name="universityName") 
+        
+        p English
+        input(type='number' name="score[]")
+
+        p Math
+        input(type='number' name="score[]")
+
+        p Science
+        input(type='number' name="score[]")
+
+        p Social
+        input(type='number' name="score[]")
+        
+        p Select
+        input(type='number' name="score[]")
+
+        p Korean
+        input(type='number' name="score[]")
+
+        input(type = 'submit' name = 'submit' value = "submit")
