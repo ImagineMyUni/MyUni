@@ -1,11 +1,7 @@
-import assert from 'assert';
 import chai, { expect } from 'chai';
 import app from '../app';
 import mongoose from 'mongoose';
 chai.use(chaiHttp);
-import userController from '../controller/userController';
-import apiController from '../controller/apiController';
-import contentsController from '../controller/contentsController';
 import chaiHttp from 'chai-http';
 import dotenv from 'dotenv';
 dotenv.config();
@@ -15,7 +11,6 @@ const User = mongoose.model('User');
 
 /* Converter Test */
 describe('Converter Test', () => {
-    var database = null;
 
     before('Before Convert, Make Record', (done) => {
         mongoose.connect(process.env.MONGO_TEST_URL, {
@@ -60,8 +55,6 @@ describe('Converter Test', () => {
             University.find({
                 universityName: "Sogang"
             }, (err, result) => {
-                    console.log("RESULT", result);
-                    console.log("RESULT", result[0].gradeBenchmark[0]);
                     if (err) throw err;
                     expect(result[0]).to.have.property('universityName');
                     expect(result[0]).to.have.property('gradeBenchmark');
@@ -76,8 +69,9 @@ describe('Converter Test', () => {
                     universityName: "Sogang",
                     score: [90,80,70,60,70,80,80]
                  })
-                 .end((err, res) => {
-                     expect(res).to.have.status(200);
+                .end((err, res) => {
+                    expect(res).to.have.status(200);
+                    expect(res.body.message).to.be.a('number');
                      done();
                  });
 
@@ -90,5 +84,3 @@ describe('Converter Test', () => {
         });
     })
 });
-    // it('POST /converter Should Return 200, Message', done => {
-    //             //     });

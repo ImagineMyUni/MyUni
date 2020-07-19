@@ -34,16 +34,18 @@ export const authMiddleware = (req, res, next) => {
 
 /* Only Public can access */ 
 export const onlyPublic = (req, res, next) => {
-    if (req.user) {
+    // 로그인 된 사람이면 home으로 돌려보내기
+    if (req.isAuthenticated()) {
         res.redirect(routes.home);
     } else {
+    // 로그인 안 된 사람이면 입장~
         next();
     }
 }
 
 /* Only Private can access (Login)*/
 export const onlyPrivate = (req, res, next) => {
-    if (req.user) {
+    if (req.isAuthenticated()) {
         next();
     } else {
         res.redirect(routes.login);
@@ -56,12 +58,3 @@ export const localsMiddleware = (req, res, next) => {
     res.locals.loggedUser = req.user || null;
     next();
 };
-
-export const isAuthenticated = (req, res, next) => {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect('/');
-}
-
-
