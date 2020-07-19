@@ -12,15 +12,15 @@ import University from '../database/models/University';
 import chaiHttp from 'chai-http';
 
 /* databse test */
-describe('User Schema Test', () => {
-    it('create should be invalid if userId or userName, userPassword are empty', (done) => {
-        var m = new model();
-        m.validate(err => {
-            chai.expect(err.errors.userId).to.exist;
-            done();
-        });        
-    });
-})
+// describe('User Schema Test', () => {
+//     it('create should be invalid if userId or userName, userPassword are empty', (done) => {
+//         var m = new model();
+//         m.validate(err => {
+//             chai.expect(err.errors.userId).to.exist;
+//             done();
+//         });        
+//     });
+// })
 
 /* Login Test */
 describe('Login Test ', () => {
@@ -51,36 +51,36 @@ describe('Login Test ', () => {
 
 /* Join Test */
 describe('Join Test', () => {
-    describe('Join Post Test', () => {
-        it('Should Return 200 Status, Message', done => {
-            chai.request(app)
-                .post('/join')
-                .send({
-                    userId: 'test',
-                    userName: 'test',
-                    userPassword: 'test',
-                    userPassword2: 'test'
-                })
-                .end((err, res) => {
-                    expect(res).to.have.status(200);
-                    expect(res).to.be.json;
-                    expect(res.body.resultCode).to.equal(200);
-                    expect(res.body.success).to.equal(true);
-                    expect(res.body.message).to.equal("JoinSuccess");
+    // describe('Join Post Test', () => {
+    //     it('Should Return 200 Status, Message', done => {
+    //         chai.request(app)
+    //             .post('/join')
+    //             .send({
+    //                 userId: 'test',
+    //                 userName: 'test',
+    //                 userPassword: 'test',
+    //                 userPassword2: 'test'
+    //             })
+    //             .end((err, res) => {
+    //                 expect(res).to.have.status(200);
+    //                 expect(res).to.be.json;
+    //                 expect(res.body.resultCode).to.equal(200);
+    //                 expect(res.body.success).to.equal(true);
+    //                 expect(res.body.message).to.equal("JoinSuccess");
 
-                    done();
-                })
-        });
-    });
+    //                 done();
+    //             })
+    //     });
+    // });
 
-    describe('Join Get Test', () => {
-        it('Should Return 200 Status', done => {
-            chai.request(app)
-                .get('/join')
-                .end((err, res) => {
-                    expect(res).to.have.status(200);
-                    done();
-            })
-        })
-    })
+    // describe('Join Get Test', () => {
+    //     it('Should Return 200 Status', done => {
+    //         chai.request(app)
+    //             .get('/join')
+    //             .end((err, res) => {
+    //                 expect(res).to.have.status(200);
+    //                 done();
+    //         })
+    //     })
+    // })
 });

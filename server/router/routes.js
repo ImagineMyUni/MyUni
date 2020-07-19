@@ -12,6 +12,7 @@ const EDIT_PROFILE = "/:id/edit"
 
 // API
 const API = "/api";
+const CONVERTER = "/converter";
 
 //Google
 const GOOGLE = "/oauth/google";
@@ -46,7 +47,8 @@ const routes = {
     editProfile: EDIT_PROFILE,
 
     api: API,
-
+    converter: CONVERTER,
+    
     google: GOOGLE,
     googleCallback: GOOGLE_CALLBACK,
     facebook: FACEBOOK,

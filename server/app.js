@@ -15,6 +15,7 @@ import userRouter from './router/userRouter';
 import { localsMiddleware } from './middleware/auth';
 
 import './passport-setup';
+import apiRouter from './router/apiRouter';
 
 const app = express();
 const CookieStore = MongoStore(session);
@@ -51,8 +52,11 @@ app.use(passport.initialize());
 // Take the cookie this will call deserialize, Taking the Id From the cookie
 app.use(passport.session()); 
 app.use(localsMiddleware);
+
 app.use(routes.home, globalRouter);
 app.use(routes.user, userRouter);
+app.use(routes.api, apiRouter);
+
 
 app.set('view engine', 'pug');
 
