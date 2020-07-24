@@ -131,14 +131,14 @@ export const getLogout = (req, res) => {
 export const googleLogin = passport.authenticate("google");
 export const googleLoginCallback = async (_, __, profile, cb) => {
     const {
-        email, name, googleId : sub
+        email, name
     } = profile._json;
 
     try {
         const user = await User.findOne({ email });
         // If user be
         if (user !== null) {
-            user.googleId = googleId;
+            user.googleId = email;
             user.save();
             return cb(null, user);
         }
@@ -146,9 +146,9 @@ export const googleLoginCallback = async (_, __, profile, cb) => {
         const newUser = await User.create({
             email,
             name,
-            googleId
+		googleId: email
         });
-
+	
         return cb(null, newUser);
 
     } catch (error) {
@@ -163,6 +163,7 @@ export const postGoogleLogin = (req, res) => {
 
 export const kakaoLogin = passport.authenticate("kakao");
 export const kakaoLoginCallback = async (_, __, profile, cb) => {
+	console.log(profile);
     try {
         const name = profile._json.properties.nickname;
         const kakaoId = profile._json.id;

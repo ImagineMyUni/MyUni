@@ -64,10 +64,15 @@ passport.use(
 );
 // Normally, just take user's id for minimalizing Cookie.
 // Ex) passport.serializeuser((user,done)=> (done, user.id))
-passport.serializeUser((user, done) => done(null, user));
+passport.serializeUser((user, done) => done(null, user.id));
 
 // We get User's info in 'req.user'
-passport.deserializeUser((user, done) => done(null, user));
+//passport.deserializeUser((user, done)=>done(null, user));
+passport.deserializeUser((id, done) => {
+	User.findById(id, (err, user)=>{
+		done(null, user);
+	});
+});
 
 
 
