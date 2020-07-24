@@ -6,7 +6,6 @@ before_install: # 패키지를 다운로드 받기 전
 branches:
   only:
     - master # 마스터 브랜치에 Push 했을 때만 반영할 것이다.
-    - dev
 notifications: # 성공 실패 여부
   email:
     recipients:
