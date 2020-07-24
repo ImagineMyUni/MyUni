@@ -1,4 +1,4 @@
-//mport passport from 'passport';
+//import passport from 'passport';
 /*import passportJwt from 'passport-jwt';
 
 import User from './database/models/User';
