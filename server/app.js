@@ -21,6 +21,7 @@ import contentsRouter from './router/contentsRouter';
 const app = express();
 const CookieStore = MongoStore(session);
 
+app.use(express.static('resource'));
 app.use(body_parser.urlencoded({ extended: true }));
 app.use(body_parser.json());
 app.use(cookie_parser());
