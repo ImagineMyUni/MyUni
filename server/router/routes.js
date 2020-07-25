@@ -16,9 +16,10 @@ const CONTENTS_VIDEO_LIST = "/videos";
 const CONTENTS_VIDEO = "/video/:id";
 const VIDEO_POST = "/video/post";
 
+const CONVERTER = "/converter";
+const UNIVERSITY = "/university";
 // API
 const API = "/api";
-const CONVERTER = "/converter";
 
 //Google
 const GOOGLE = "/oauth/google";
@@ -64,7 +65,8 @@ const routes = {
             return CONTENTS_VIDEO;
         }
     },
-    videoPost: VIDEO_POST,
+    video_post: VIDEO_POST,
+    university: UNIVERSITY,
     
     google: GOOGLE,
     googleCallback: GOOGLE_CALLBACK,

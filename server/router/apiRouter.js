@@ -5,7 +5,4 @@ import { onlyPrivate } from '../middleware/auth';
 
 const apiRouter = express.Router();
 
-apiRouter.post(routes.converter, onlyPrivate, postScoreConverter);
-apiRouter.get(routes.converter, onlyPrivate, getScoreConverter);
-
 export default apiRouter;

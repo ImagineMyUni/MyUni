@@ -1,7 +1,7 @@
 extends layouts/main
 block content
     p convertert Test
-    form(action='/api/converter', method = 'POST')
+    form(action='/contents/converter', method = 'POST')
         p Univeristy
         input(type='text' name="universityName") 
         
@@ -24,3 +24,5 @@ block content
         input(type='number' name="score[]")
 
         input(type = 'submit' name = 'submit' value = "submit")
+
+    a(href="/contents/university", method="get") 대학 등록하기
