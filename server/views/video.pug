@@ -1,0 +1,8 @@
+extends layouts/main
+block content
+    p Main
+    iframe(src=video.url + "?autoplay=1", width='50%', height = '50%', autoplay='1')
+    br
+    form(action="/contents/videos", method="get")
+        input(type="submit", value="돌아가기")
+    br

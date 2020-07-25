@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "scripts": {
-    "dev:server": "babel-node init.js",
+    "dev:server": "nodemon --exec babel-node init.js",
     "test": "npx mocha -t 20000 --require @babel/register --require @babel/polyfill --exit ./test/**spec.js"
   },
   "engines": {

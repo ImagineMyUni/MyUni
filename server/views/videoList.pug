@@ -1,0 +1,10 @@
+extends layouts/main
+block content
+    p Main
+        ul
+            each item in videos
+                li
+                    a(href="/contents/video/" + item._id)
+                        h2= item.title
+
+    a(href="/contents/video/post") 새로 추가하기

@@ -10,6 +10,12 @@ const USER = "/user";
 const USER_DETAIL = "/:id"
 const EDIT_PROFILE = "/:id/edit"
 
+// Contents
+const CONTENTS = "/contents";
+const CONTENTS_VIDEO_LIST = "/videos";
+const CONTENTS_VIDEO = "/video/:id";
+const VIDEO_POST = "/video/post";
+
 // API
 const API = "/api";
 const CONVERTER = "/converter";
@@ -48,6 +54,17 @@ const routes = {
 
     api: API,
     converter: CONVERTER,
+    
+    contents: CONTENTS,
+    contents_video_list : CONTENTS_VIDEO_LIST,
+    contents_video: (id) => {
+        if (id) {
+            return `/video/${id}`;
+        } else {
+            return CONTENTS_VIDEO;
+        }
+    },
+    videoPost: VIDEO_POST,
     
     google: GOOGLE,
     googleCallback: GOOGLE_CALLBACK,

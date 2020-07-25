@@ -1,0 +1,12 @@
+extends layouts/main
+block content
+    p videoPost1
+        form(action="/contents/video/post", method="post")
+            label 제목
+            input(type = "text", name="title")
+            label 주소
+            input(type="url", name="url")
+            input(type="submit", value="submit")
+
+        
+    br
