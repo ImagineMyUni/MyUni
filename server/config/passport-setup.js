@@ -4,12 +4,12 @@ import { Strategy as KakaoStrategy } from 'passport-kakao';
 import { Strategy as NaverStrategy } from 'passport-naver';
 import { Strategy as FacebookStrategy } from 'passport-facebook';
 
-import User from './database/models/User';
+import path from 'path';
 import dotenv from 'dotenv';
-import { googleLoginCallback, kakaoLoginCallback, naverLoginCallback, facebookLoginCallback } from './controller/userController';
-import routes from './router/routes';
+import { googleLoginCallback, kakaoLoginCallback, naverLoginCallback, facebookLoginCallback } from '../controller/userController';
+import routes from '../router/routes';
 
-dotenv.config();
+dotenv.config({path:'config/'});
 
 // get --> authenticate --> anyway callback function call
 passport.use(

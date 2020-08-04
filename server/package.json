@@ -31,6 +31,8 @@
     "jsonwebtoken": "^8.5.1",
     "logger": "0.0.1",
     "mocha": "^8.0.1",
+    "moment": "^2.27.0",
+    "moment-timezone": "^0.5.31",
     "mongoose": "^5.9.22",
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
@@ -44,7 +46,9 @@
     "passport-naver": "^1.0.6",
     "pm2": "^4.4.0",
     "sinon": "^9.0.2",
-    "uuidv4": "^6.1.1"
+    "uuidv4": "^6.1.1",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
