@@ -1,0 +1,158 @@
+.wrap{
+	position: absolute;
+	top:10%;
+	left:30%;
+	border:solid 1px gray;
+
+	width: 375px;
+	height: 634px;
+	min-width:375px;
+
+	margin:20px;
+	padding:15px;
+}
+.top_head{
+	position: relative;
+	width:344px;
+	margin-bottom:5px;
+}
+h3, span{
+	font-size:13px;
+	font-family: NotoSansCJKkr;
+	color:#383838;
+}
+.login{
+	display: inline-block;
+	position: absolute;
+	right:0px;
+	top:10px;
+	width:60px;
+	height:24px;
+	font-size: 13px;
+	text-align: center;
+}
+.logo{
+	width: 92px;
+ 	height: 42px;
+  	object-fit: contain;
+}
+.menu{
+	position: relative;
+	width:360px;
+	margin-bottom: 5px;
+}
+.menu_title{
+	display: inline-block;
+	vertical-align:middle;
+	height:24px;
+	border: 1px solid #ccc!important;
+	padding: 5px 10px 0px 10px;
+	text-align: left;
+	margin:1px;
+
+}
+#clicked{
+	color:green;
+}
+
+.subject_option{
+	position: relative;
+	width: 344px;
+	height: auto;
+	margin-bottom: 5px;
+	padding: 15px 0px 15px 0px;
+  	border-radius: 10px;
+  	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  	background-color: #ffffff;
+}
+.subject_option .title{
+	padding:0px 0px 0px 20px;
+	height:24px;
+	text-align: left;
+	font-size: 20px;
+	margin:10px 0px 20px 0px;
+}
+.subject_option .boxes{
+	padding:0px 20px 0px 20px;
+}
+.boxes .check{
+	display: inline-block;
+	margin:0px 5px 15px 0px;
+	font-size: 13px;
+}
+.check .check_box{
+	/*나중에*/
+}
+
+
+.scores{
+	position: relative;
+	width: 344px;
+ 	height: 354px;
+  	border-radius: 10px;
+ 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+ 	background-color: #ffffff;
+}
+
+.scores .title{
+	padding:20px 0px 0px 20px;
+	height:24px;
+	text-align: left;
+	font-size: 20px;
+	margin:10px 0px 20px 0px;
+}
+
+.score_input{
+	width:20px;
+}
+
+.score{
+	margin:5px 5px 5px 10px;
+	width: 45%
+    margin: auto;
+}
+
+.first {
+    border: none;
+    float: left;
+    width:15%;
+    box-sizing: border-box;
+}
+
+.second{
+    border: 1px solid green;
+    border-right: none;
+    float: left;
+    margin-left: 5%;
+    width:20%;
+    box-sizing: border-box;
+}
+
+.third{
+    border: 1px solid green;
+    border-left:none;
+    float: left;
+    width:10%;
+    box-sizing: border-box;
+}
+
+.convert{
+	position: absolute;
+	left:24px;
+	bottom:24px;
+	width: 300px;
+ 	height: 38px;
+
+
+  	border-radius: 22px;
+  	background-color: #4d5c00;
+
+	padding:0px 0px 0px 0px;
+
+	font-family: NotoSansCJKkr;
+  	font-size: 16px;
+  	font-weight: 500;
+ 
+  	text-align: center;
+  	color: #fafafa;
+}

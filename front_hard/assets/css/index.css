@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 32px;
+}
+
+.div1-1{
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.logo-img {
+    width: auto;
+    height: 100px;
+    object-fit: contain;
+  }
+
+.login-btn{
+    position: absolute;
+    width: 120px;
+    height: 50px;
+    font-family: NotoSansCJKkr;
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    color: #383838;
+    right: 0;
+    top: 25px;
+    text-align: center;
+    background: none;
+    border: none;
+}
+
+.div1-2{
+    margin: 0 40px 0 20px;
+}
+
+.contents{
+    margin-bottom: 50px;
+}
+
+.contents ul{
+    display: flex;
+    padding: 0;
+}
+
+.contents li{
+    display: block;
+    flex: 0 0 33%;
+    max-width: 33%;
+    text-align: center;
+    font-size: 32px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.box{
+    border-radius: 10px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+    margin: 0 40px 60px 40px;
+    min-width: 100px;
+    padding: 15px;
+}
+
+.box-title{
+    font-size: 40px;
+    font-weight: 500;
+    padding: 20px 40px 20px 40px;
+}
+
+input[type=checkbox] {  
+    display: none;  
+}
+
+input[type=checkbox] + label{
+    display: inline-block;  
+    cursor: pointer;  
+    position: relative;  
+    padding-left: 40px;  
+    margin-right: 16px;  
+}
+
+input[type=checkbox]+ label:before {     
+
+    content: "";  
+    display: inline-block;  
+  
+    width: 32px;  
+    height: 32px;  
+  
+    margin-right: 16px;  
+    position: absolute;  
+    left: 0;  
+    bottom: 5px;  
+    background-color: #ccc;  
+    border-radius: 2px; 
+    box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);  
+}
+input[type=checkbox]:checked + label:before { 
+
+    content: "\2713";  /* 체크모양 */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);  
+    font-size: 32px; 
+    font-weight:800; 
+    color: #fff;  
+    background:#2f87c1;
+    text-align: center;  
+    line-height: 18px;  
+
+} 
+
+.div1-4{
+    position: relative;
+}
+
+#input-btn{
+    position: absolute;
+    right: 25px;
+    top: 40px;
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+}
+
+.sub-form label{
+    margin: 0 50px 20px 50px;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="assets/css/style1.css">
+	<title>비교내신 환산 전</title>
+</head>
+<body>
+	<div class="wrap">
+		<div class="top_head">
+			<a href="index1.html">
+				<img src="assets/img/logo1.png" class="logo">
+			</a>
+			<div class="login">로그인</div>
+		</div>
+		<div class="menu">
+			<span id="clicked" class="menu_title">비교내신 환산</span>
+			<span class="menu_title">대학 정보</span>
+			<span class="menu_title">대학 입시 소양교육</span>
+		</div>
+		<div class="subject_option">
+			<h3 class="title">반영과목 및 비율 선택</h3>
+			<div class="boxes">
+				<div class="check">
+					<input type="checkbox" name="subjects" value="all" class="check_box">전과목</div>
+				<div class="check">
+					<input type="checkbox" name="subjects" value="mandatory" class="check_box">필수과목 (국/영/수/사/과/한)</div>
+				<div class="check">
+					<input type="checkbox" name="subjects" value="weighted" class="check_box">국/영/수 가중 반영</div>
+				<div class="check">
+					<input type="checkbox" name="subjects" value="high_subject" input="check_box">상위
+					<select>
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option vlaue="3">3</option>
+					</select> 과목 선택
+				</div>
+			</div>
+		</div>
+		<div class="scores">
+			<h3 class="title">성적 입력</h3>
+			<div class="score_list">
+				<div class="score left">
+					<div class="subject first">국어</div>
+					<div class="score_input second">
+						<input type="text" size=4 name="kor" style="border: none;"></div>
+					<div class="point third">점</div>
+				</div>
+				<div class="score left">
+					<div class="subject first">영어</div>
+					<div class="score_input second">
+						<input type="text" size=4 name="kor" style="border: none;"></div>
+					<div class="point third">점</div>
+				</div>
+				<div class="score left">
+					<div class="subject first">수학</div>
+					<div class="score_input second">
+						<input type="text" size=4 name="kor" style="border: none;"></div>
+					<div class="point third">점</div>
+				</div>
+				<div class="score left">
+					<div class="subject first">과학</div>
+					<div class="score_input second">
+						<input type="text" size=2 name="kor" style="border: none;"></div>
+					<div class="point third">점</div>
+				</div>
+			</div>
+			<div class="convert">환산하기</div>
+		</div>
+	</div>
+</body>
+</html>
