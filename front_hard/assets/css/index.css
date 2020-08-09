@@ -6,6 +6,11 @@ body{
     font-size: 32px;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
 .div1-1{
     position: relative;
     margin-bottom: 50px;
@@ -123,15 +128,102 @@ input[type=checkbox]:checked + label:before {
     position: relative;
 }
 
-#input-btn{
+.svg-btn{
     position: absolute;
-    right: 25px;
-    top: 40px;
+    background-color: rgba(225, 225, 225, 0);
+    border: none;
+    cursor: pointer;
+}
+
+#input-btn{
     width: 100px;
     height: 100px;
-    font-size: 30px;
+    right: 25px;
+    top: 40px;
+}
+
+#filter-btn{
+    width: 85px;
+    height: 85px;
+    right: 25px;
+    top: -5px;
+}
+
+#find-btn{
+    width: 85px;
+    height: 85px;
+    left: 35px;
+    top: -5px;
 }
 
 .sub-form label{
     margin: 0 50px 20px 50px;
 }
+
+.filter{
+    display: flex;
+    position: relative;
+}
+
+.uni-name-form input{
+    font-size: 32px;
+    padding-left: 85px;
+    width: 690px;
+    margin: 0 0 0 35px;
+    height: 80px;
+    border: 1.5px solid black;
+    border-radius: 25px;
+}  
+
+.result-table{
+    margin: 0 0 0 35px;
+    width: 90%;
+}
+
+.result-table th{
+    border-bottom: 4px solid rgba(0,0,0,0.16);
+    margin: 0;
+}
+
+.result-table th, .result-table td{
+    font-size: 32px;
+    text-align: center;
+}
+
+.move-table{
+    display: flex;
+    position: relative;
+    height: 60px;
+    margin-top: 5px;
+}
+
+#move--l-btn{
+    width: 60px;
+    height: 60px;
+    left: 65px;
+}
+
+#move-l-btn{
+    width: 60px;
+    height: 60px;
+    left: 120px;
+  }
+
+  #move--r-btn{
+    width: 60px;
+    height: 60px;
+    right: 65px;
+  }
+
+  #move-r-btn{
+    width: 60px;
+    height: 60px;
+    right: 120px;
+  }
+
+  .extra-box{
+      font-size: 25px;
+      width: 90%;
+      padding: 15px 35px 0 35px;
+      color: #535353;
+  }
