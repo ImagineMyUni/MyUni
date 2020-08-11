@@ -11,6 +11,11 @@ a{
     color: black;
 }
 
+.div-top{
+    padding: 0 50px;
+    margin-bottom: 30px;
+}
+
 .div1-1{
     position: relative;
     margin-bottom: 50px;
@@ -69,10 +74,10 @@ a{
 }
 
 .box{
-    border-radius: 10px;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    border-radius: 20px;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.16);
     background-color: #ffffff;
-    margin: 0 40px 60px 40px;
+    margin: 0 50px 60px 50px;
     min-width: 100px;
     padding: 15px;
 }
@@ -255,3 +260,33 @@ input[type=checkbox]:checked + label:before {
       width: 100%;
       height: auto;
   }
+
+  .login-btn img{
+      width: auto;
+      height: 100%;
+      margin-right: 50px;
+  }
+
+  .div6-2-1{
+      display: flex; 
+  }
+
+  .div6-2-1 ul{
+      margin: 0 0 50px 0;
+  }
+
+  .div6-2-1 ul li{
+      margin: 0 35px;
+  }
+
+  .div6-3{
+      text-align: center;
+  }
+
+  .Camera{
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      padding-top: 10px;
+  }
+  
