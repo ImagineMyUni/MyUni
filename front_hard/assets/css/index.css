@@ -227,3 +227,31 @@ input[type=checkbox]:checked + label:before {
       padding: 15px 35px 0 35px;
       color: #535353;
   }
+
+  .div4-1{
+      margin-bottom: 300px;
+  }
+
+  .div4-2-1{
+      display: flex;
+      padding: 0 200px;
+  }
+
+  .div4-2-1 img{
+      margin-right: 50px;
+  }
+
+  .div4-2-1 p{
+      font-size: 40px;
+      margin: 0;
+      padding: 20px 0;
+  }
+
+  .easy-login{
+    padding: 0 150px;
+  }
+
+  .easy-login img{
+      width: 100%;
+      height: auto;
+  }
