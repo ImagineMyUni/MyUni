@@ -289,4 +289,24 @@ input[type=checkbox]:checked + label:before {
       object-fit: contain;
       padding-top: 10px;
   }
-  
+
+  .div7-2, .div7-3, .div7-4{
+    position: relative;
+  }
+
+  .expand-btn{
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    width: 30px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .detail-box{
+      display: none;
+  }
+
+  .link-btn img{
+      width: 24px;
+  }
