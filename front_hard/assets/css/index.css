@@ -6,6 +6,11 @@ body{
     font-size: 32px;
 }
 
+.main{
+    position: relative;
+    padding-top: 150%;
+}
+
 a{
     text-decoration: none;
     color: black;
@@ -15,9 +20,10 @@ a{
     margin-bottom: 30px;
 }
 
-.div1-1{
+.header-top{
     position: relative;
     margin-bottom: 50px;
+    padding: 0 35px;
 }
 
 .logo-img {
@@ -37,16 +43,15 @@ a{
     font-style: normal;
     line-height: 1.5;
     letter-spacing: normal;
-    text-align: left;
     color: #383838;
-    right: 0;
+    right: 35px;
     top: 25px;
     text-align: center;
     background: none;
     border: none;
 }
 
-.div1-2{
+header nav{
     margin: 0 40px 0 20px;
 }
 
@@ -73,11 +78,13 @@ a{
 }
 
 .box{
+    /* width: -webkit-fill-available; */
+    width: 80%;
+    margin: 50px 10%;
     border-radius: 20px;
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.16);
     background-color: #ffffff;
-    margin: 0 50px 60px 50px;
-    min-width: 100px;
+    min-height: 100px;
     padding: 15px;
 }
 
@@ -232,8 +239,13 @@ input[type=checkbox]:checked + label:before {
       color: #535353;
   }
 
-  .div4-1{
-      margin-bottom: 300px;
+  .div4-2{
+    position: absolute;
+    /* width: -webkit-fill-available; */
+    width: 80%;
+    left: 10%;
+    top: 25%;
+    margin: 0 !important;
   }
 
   .div4-2-1{
@@ -242,7 +254,9 @@ input[type=checkbox]:checked + label:before {
   }
 
   .div4-2-1 img{
-      margin-right: 50px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
   }
 
   .div4-2-1 p{
@@ -309,3 +323,57 @@ input[type=checkbox]:checked + label:before {
   .link-btn img{
       width: 24px;
   }
+
+  .flex-item-6{
+      flex: 0 0 50%;
+  }
+
+  #easy-login-txt{
+    text-align: center;
+    padding: 20px 0;
+    font-size: 40px;
+  }
+
+  .score-form{
+      display: none;
+  }
+
+  .score-form-box{
+      display: flex;
+      flex-flow: row wrap;
+      padding: 30px;
+  }
+
+  .score-input{
+      flex: 0 0 50%;
+      display: flex;
+
+  }
+
+  .score-input input{
+    display: block;
+    width: 50%;
+    height: 70px;
+    border-radius: 6px;
+    border: solid 0.5px #707070;
+    font-size: 40px;
+  }
+
+  .score-input label{
+    display: block;
+    width: 35%;
+    height: 70px;
+    margin-right: 10px;
+    text-align: right;
+    font-size: 40px;
+}
+
+.score-submit{
+    width: 80%;
+    height: 80px;
+    border-radius: 44px;
+    background-color: #4d5c00;
+    color: white;
+    font-size: 40px;
+    margin-left: 10%;
+}
