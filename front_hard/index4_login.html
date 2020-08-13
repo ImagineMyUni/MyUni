@@ -1,20 +1,43 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>로그인</title>
         <link rel="stylesheet" href="assets/css/index.css">
+        <!-- <script type="text/javascript">
+            function resizeToMinimum(){
+                var minimum    = [640, 480];
+                var current    = [window.outerWidth, window.outerHeight];
+                var restricted = [];
+                var i          = 2;
+    
+                while(i-- > 0){
+                    restricted[i] = minimum[i] > current[i] ? minimum[i] : current[i];
+                }
+    
+                window.resizeTo(current[0], current[1]);
+                }
+    
+            window.addEventListener('resize', resizeToMinimum, false)
+        </script> -->
     </head>
     <body>
-        <div class="div-top div4">
-            <div class="div4-1">
+        <header>
+            <div class="header-top">
                 <img src="assets/img/logo/마이유니-타이포-버전.png" class="logo-img" srcset="assets/img/logo/마이유니-타이포-버전@2x.png 2x,assets/img/logo/마이유니-타이포-버전@3x.png 3x"/>
                 <button type="button" name="login" class="login-btn">로그인</button>
             </div>
+        </header>
+        <div class="main">
             <div class="div4-2 box">
                 <div class="div4-2-1">
-                    <img src="assets/img/logo/마이유니-타이포-버전.png" class="logo-img" srcset="assets/img/logo/마이유니-타이포-버전@2x.png 2x,
+                    <div class="flex-item-6">
+                        <img src="assets/img/logo/마이유니-타이포-버전.png" class="logo-img" srcset="assets/img/logo/마이유니-타이포-버전@2x.png 2x,
                     assets/img/logo/마이유니-타이포-버전@3x.png 3x"/>
-                    <p>간편로그인</p>
+                    </div>
+                    <div class="flex-item-6" id="easy-login-txt">
+                        간편로그인
+                    </div>
                 </div>
                 <div class="div4-2-2">
                     <p class="easy-login"><a href="#"><img src="assets/img/그룹 93_2020-08-11/그룹 93.png" srcset="assets/img/그룹 93_2020-08-11/그룹 93@2x.png 2x,iassets/img/그룹 93_2020-08-11/그룹 93@3x.png 3x" class="-\39 3"></a></p>
