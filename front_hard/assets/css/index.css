@@ -12,7 +12,6 @@ a{
 }
 
 .div-top{
-    padding: 0 50px;
     margin-bottom: 30px;
 }
 
@@ -238,8 +237,8 @@ input[type=checkbox]:checked + label:before {
   }
 
   .div4-2-1{
-      display: flex;
-      padding: 0 200px;
+    display: flex;
+    padding: 0px 140px;
   }
 
   .div4-2-1 img{
