@@ -3,7 +3,22 @@
 
 body{
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 32px;
+    font-size: 2rem;
+}
+
+#limit-img{
+    display: none;
+}
+
+@media(min-width: 1024px){
+    #limit-img{
+        display: block;
+        object-fit: contain0;
+    }
+
+    .main-contents{
+        display: none;
+    }
 }
 
 .main{
@@ -79,8 +94,8 @@ a{
 
 .box{
     /* width: -webkit-fill-available; */
-    width: 80%;
-    margin: 50px 10%;
+    width: 85%;
+    margin: 50px 5%;
     border-radius: 20px;
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.16);
     background-color: #ffffff;
@@ -118,7 +133,8 @@ input[type=checkbox]+ label:before {
     position: absolute;  
     left: 0;  
     bottom: 5px;  
-    background-color: #ccc;  
+    background-color: white;
+    border: 0.5px solid black;  
     border-radius: 2px; 
     box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);  
 }
@@ -156,7 +172,7 @@ input[type=checkbox]:checked + label:before {
 #filter-btn{
     width: 85px;
     height: 85px;
-    right: 25px;
+    right: 3%;
     top: -5px;
 }
 
@@ -176,11 +192,15 @@ input[type=checkbox]:checked + label:before {
     position: relative;
 }
 
+.filter div{
+    width: 80%;
+}
+
 .uni-name-form input{
     font-size: 32px;
     padding-left: 85px;
-    width: 690px;
-    margin: 0 0 0 35px;
+    width: 100%;
+    margin: 0 0 0 5%;
     height: 80px;
     border: 1.5px solid black;
     border-radius: 25px;
@@ -194,11 +214,13 @@ input[type=checkbox]:checked + label:before {
 .result-table th{
     border-bottom: 4px solid rgba(0,0,0,0.16);
     margin: 0;
+    font-weight: initial;
 }
 
-.result-table th, .result-table td{
+.result-table th, .result-table td, .result-table td a{
     font-size: 32px;
     text-align: center;
+    color: #707070;
 }
 
 .move-table{
@@ -233,7 +255,7 @@ input[type=checkbox]:checked + label:before {
   }
 
   .extra-box{
-      font-size: 25px;
+      font-size: 1.5rem;
       width: 90%;
       padding: 15px 35px 0 35px;
       color: #535353;
@@ -318,6 +340,7 @@ input[type=checkbox]:checked + label:before {
 
   .detail-box{
       display: none;
+      margin: 15px 0;
   }
 
   .link-btn img{
@@ -376,4 +399,90 @@ input[type=checkbox]:checked + label:before {
     color: white;
     font-size: 40px;
     margin-left: 10%;
+}
+
+.div5-1{
+    position: relative;
+    width: 85%;
+    margin: 50px 5%;
+    padding: 0 15px;
+}
+
+.div5-1 .uni-name-form input{
+    margin: 0 !important;
+}
+
+.my-grade{
+    font-size: 36px;
+    font-weight: 400;
+    padding: 0 40px 0 40px;
+    margin: 0 0 45px 0;
+}
+
+.initial .score-form{
+    display: block !important;
+}
+
+.download-btn{
+    background-color: rgba(225, 225, 225, 0);
+    border: none;
+}
+
+.download-btn img{
+    width: 2rem;
+    height: 2rem;
+}
+
+.div5-5 ul{
+    margin: 25px;
+}
+
+.div5-5 ul li{
+    padding: 15px;
+}
+
+.div5-5 ul li text{
+    display: inline-block;
+    width: 90%;
+}
+
+.expand-text{
+    text-decoration: underline;
+}
+
+.flex-box{
+    display: flex;
+}
+
+.flex-box .left{
+    padding: 10px;
+    width: 40%;
+}
+
+.flex-box .left img{
+    width: 100%;
+    height: auto;
+}
+
+.flex-box .right{
+    padding: 10px;
+    width: 60%;
+}
+
+.flex-box .right h1{
+    font-size: 40px;
+    font-weight: 500;
+    margin: 12px 0;
+}
+
+.flex-box .right p{
+    font-size: 1.85rem;
+    margin: 8px 0;
+}
+
+.flex-box .right p img{
+    object-fit: contain;
+    width: 22px;
+    height: 22px;
+    margin-right: 5px;
 }
