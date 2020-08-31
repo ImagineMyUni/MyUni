@@ -1,54 +1,55 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>비교내신 환산 후</title>
+        <title>비교내신 환산</title>
         <link rel="stylesheet" href="assets/css/index.css">
-        <script type="text/javascript" src="assets/js/jquery-3.5.1.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery-3.5.1.min.js"></script>
+		<script type="text/javascript" src="assets/js/jquery.ajax-cross-origin.min.js"></script>
     </head>
     <body>
-        <img id="limit-img" src="assets//img/test.jpg"/>
+		<img id="limit-img" src="assets//img/test.jpg"/>
 		<div class="main-contents">
-            <header>
-                <div class="header-top">
-                    <img src="assets/img/logo/마이유니-타이포-버전.png" class="logo-img" srcset="assets/img/logo/마이유니-타이포-버전@2x.png 2x,assets/img/logo/마이유니-타이포-버전@3x.png 3x"/>
-                    <button type="button" name="login" class="login-btn">로그인</button>
-                </div>
-                <nav class="contents">
-                    <ul>
-                        <li><a href="#">비교내신 환산</a></li>
-                        <li><a href="#">대학 정보</a></li>
-                        <li><a href="#">대학 입시 소양교육</a></li>
-                    </ul>
-                </nav>
-            </header>
-            <div class="div-top div1">
-                <div class="div1-3 box">
-                    <h1 class="box-title">반영과목 및 비율 선택</h1>
-                    <form class="sub-form">
-                        <!-- 여기서 선택을 하나만 할 수 있는건가? -->
-                        <input type="checkbox" name="name" id="1" value="전과목"/><label for="1">전과목</label>
-                        <input type="checkbox" name="name" id="2" value="필수과목(국/영/수/사/과/한)"/><label for="2">필수과목(국/영/수/사/과/한)</label><br>
-                        <input type="checkbox" name="name" id="3" value="국/영/수 가중 반영"/><label for="3">국/영/수 가중 반영</label>
-                        <input type="checkbox" name="name" id="4" value="상위"/><label for="4">상위</label>
-                    </form>
-                </div>
-                <div class="div1-4 box">
-                    <h1 class="box-title">성적 입력</h1>
-                    <button class="svg-btn" id="input-btn" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#707070"><g data-name="Layer 2"><g data-name="edit"><rect width="24" height="24" opacity="0"/><path d="M19.4 7.34L16.66 4.6A2 2 0 0 0 14 4.53l-9 9a2 2 0 0 0-.57 1.21L4 18.91a1 1 0 0 0 .29.8A1 1 0 0 0 5 20h.09l4.17-.38a2 2 0 0 0 1.21-.57l9-9a1.92 1.92 0 0 0-.07-2.71zM9.08 17.62l-3 .28.27-3L12 9.32l2.7 2.7zM16 10.68L13.32 8l1.95-2L18 8.73z"/></g></g></svg></button>
-                    <form class="score-form">
-                        <div class="score-form-box">
-                            <p class="score-input"><label for="korean">국어</label><input type="text" name="korean" id="korean"/></p>
-                            <p class="score-input"><label for="english">영어</label><input type="text" name="english" id="english"/></p>
-                            <p class="score-input"><label for="math">수학</label><input type="text" name="math" id="math"/></p>
-                            <p class="score-input"><label for="society">사회</label><input type="text" name="society" id="society"/></p>
-                            <p class="score-input"><label for="science">과학</label><input type="text" name="science" id="science"/></p>
-                            <p class="score-input"><label for="history">한국사</label><input type="text" name="history" id="history"/></p>
-                            <p class="score-input"><label for="choice">선택</label><input type="text" name="choice" id="choice"/></p>
-                        </div>
-                        <input class="score-submit" type="submit" value="환산하기"/>
-                    </form>
-                </div>
-                <div class="div1-5 box">
+			<header>
+				<div class="header-top">
+					<img src="assets/img/logo/마이유니-타이포-버전.png" class="logo-img" srcset="assets/img/logo/마이유니-타이포-버전@2x.png 2x,assets/img/logo/마이유니-타이포-버전@3x.png 3x"/>
+					<button type="button" name="login" class="login-btn">로그인</button>
+				</div>
+				<nav class="contents">
+					<ul>
+						<li><a href="#">비교내신 환산</a></li>
+						<li><a href="#">대학 정보</a></li>
+						<li><a href="#">대학 입시 소양교육</a></li>
+					</ul>
+				</nav>
+        	</header>
+			<div class="div-top div1">
+				<div class="div1-3 box">
+					<h1 class="box-title">반영과목 및 비율 선택</h1>
+					<form class="sub-form">
+						<!-- 여기서 선택을 하나만 할 수 있는건가? -->
+						<input type="checkbox" name="name" id="1" value="전과목"/><label for="1">전과목</label>
+						<input type="checkbox" name="name" id="2" value="필수과목(국/영/수/사/과/한)"/><label for="2">필수과목(국/영/수/사/과/한)</label><br>
+						<input type="checkbox" name="name" id="3" value="국/영/수 가중 반영"/><label for="3">국/영/수 가중 반영</label>
+						<input type="checkbox" name="name" id="4" value="상위"/><label for="4">상위</label>
+					</form>
+            	</div>
+            	<div class="div1-4 initial box">
+                	<h1 class="box-title">성적 입력</h1>
+					<button class="svg-btn" id="input-btn" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#707070"><g data-name="Layer 2"><g data-name="edit"><rect width="24" height="24" opacity="0"/><path d="M19.4 7.34L16.66 4.6A2 2 0 0 0 14 4.53l-9 9a2 2 0 0 0-.57 1.21L4 18.91a1 1 0 0 0 .29.8A1 1 0 0 0 5 20h.09l4.17-.38a2 2 0 0 0 1.21-.57l9-9a1.92 1.92 0 0 0-.07-2.71zM9.08 17.62l-3 .28.27-3L12 9.32l2.7 2.7zM16 10.68L13.32 8l1.95-2L18 8.73z"/></g></g></svg></button>
+					<form class="score-form" id="abcd" method="GET">
+						<div class="score-form-box">
+							<p class="score-input"><label for="korean">국어</label><input type="text" name="korean" id="korean"/></p>
+							<p class="score-input"><label for="english">영어</label><input type="text" name="english" id="english"/></p>
+							<p class="score-input"><label for="math">수학</label><input type="text" name="math" id="math"/></p>
+							<p class="score-input"><label for="society">사회</label><input type="text" name="society" id="society"/></p>
+							<p class="score-input"><label for="science">과학</label><input type="text" name="science" id="science"/></p>
+							<p class="score-input"><label for="history">한국사</label><input type="text" name="history" id="history"/></p>
+							<p class="score-input"><label for="choice">선택</label><input type="text" name="choice" id="choice"/></p>
+						</div>
+						<button class="score-submit" id="sendbutton">환산하기</button>
+					</form>
+				</div>
+				<div class="div1-5 box" id="result-box">
                     <h1 class="box-title">환산 결과</h1>
                     <div class="filter">
                         <div>
@@ -62,6 +63,15 @@
                             </form>
                         </div>
                         <button class="svg-btn" id="filter-btn" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#707070"><g data-name="Layer 2"><g data-name="options-2"><rect width="24" height="24" transform="rotate(90 12 12)" opacity="0"/><path d="M19 9a3 3 0 0 0-2.82 2H3a1 1 0 0 0 0 2h13.18A3 3 0 1 0 19 9zm0 4a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"/><path d="M3 7h1.18a3 3 0 0 0 5.64 0H21a1 1 0 0 0 0-2H9.82a3 3 0 0 0-5.64 0H3a1 1 0 0 0 0 2zm4-2a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/><path d="M21 17h-7.18a3 3 0 0 0-5.64 0H3a1 1 0 0 0 0 2h5.18a3 3 0 0 0 5.64 0H21a1 1 0 0 0 0-2zm-10 2a1 1 0 1 1 1-1 1 1 0 0 1-1 1z"/></g></g></svg></button>
+                    </div>
+                    <div class="div1-2">
+                        <nav class="contents">
+                            <ul>
+                                <li><a href="#">가나다순</a></li>
+                                <li><a href="#">등급 내림차순</a></li>
+                                <li><a href="#">등급 오름차순</a></li>
+                            </ul>
+                        </nav>
                     </div>
                     <table class="result-table">
                         <thead>
@@ -98,19 +108,52 @@
                         * 비교내신 등급환산 프로그램은 지원자의 등급계산 및 예전년도 성적자료와의 비교를 돕기 위한 단순 참고용이며, 실제 성적반영은 각 전형별 만점기준에 따른 환산 점수로 반영됩니다.
                     </div>
                 </div>
-            </div>
+			</div>
         </div>
-        <script type="text/javascript">
-            $('#input-btn').click(function(){
-                var display = $('.score-form').css('display');
-                console.log(display);
+		<script type="text/javascript">
+			$('#input-btn').click(function(){
+				var display = $('.score-form').css('display');
+				console.log(display);
                 if (display=='none'){
                     $('.score-form').css('display', 'block');
-                }else{
+                }else if(display == 'block'){
                     $('.score-form').css('display', 'none');
                 }
-                console.log("작동");
-            })
-        </script>
+			})
+
+			function jsonCallback(data){
+				console.log(data);
+				console.log("callback");
+			}	
+			
+			$("#sendbutton").click(function (event) {
+				$('#abcd').submit(function(event){
+					console.log("dmdkdk");
+					event.preventDefault();
+					$.ajax({
+                  crossOrigin: true,
+                  url: 'http://54.180.12.10:4000/api/converter/each_converter',
+                  crossDomain : true,
+                  type: "GET",
+                  dataType: "jsonp",
+                  data: {
+                     korean: $('input[name=korean]').val(),
+                     english: $('input[name=english]').val(),
+                     math: $('input[name=math]').val(),
+                     society: $('input[name=society]').val(),
+                     science: $('input[name=science]').val(),
+                     history: $('input[name=history]').val(),
+                     choice: $('input[name=choice]').val(),
+                  },
+				  jsonpCallback: "jsonCallback"})
+				  .done((data)=>{
+					  console.log(data);
+					}).fail(function(xhr, status, errorThrown) 
+					{ 
+						console.log("오류명: " + errorThrown + "\n상태: " + status);
+					})
+				})
+			})	
+		</script>
     </body>
 </html>

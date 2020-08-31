@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"/>
+  
+  <title>Login Demo - Kakao JavaScript SDK</title>
+  <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+ </head>
+ 
+ <body>
+  <a id="kakao-login-btn">sdfsdf</a>
+  <a href="http://developers.kakao.com/logout"></a>
+  
+  <script type='text/javascript'>
+    //<![CDATA[
+   // 사용할 앱의 JavaScript 키를 설정해 주세요.
+   Kakao.init('1cc5ea8fbab236ebcb0e8342fe9d16ff');
+
+   // SDK 초기화 여부를 판단합니다.
+   console.log(Kakao.isInitialized());
+   
+    function loginWithKakao() {
+        Kakao.Auth.authorize({
+        redirectUri: 'https://developers.kakao.com/tool/demo/oauth'
+        })
+    }
+    // 아래는 데모를 위한 UI 코드입니다.
+    getToken()
+    function getToken() {
+        const token = getCookie('authorize-access-token')
+        if(token) {
+        Kakao.Auth.setAccessToken(token)
+        document.getElementById('token-result').innerText = 'login success. token: ' + Kakao.Auth.getAccessToken()
+        }
+    }
+    function getCookie(name) {
+        const value = "; " + document.cookie;
+        const parts = value.split("; " + name + "=");
+        if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+    //
+  </script>
+ </body>
+</html>

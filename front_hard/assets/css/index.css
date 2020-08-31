@@ -357,10 +357,6 @@ input[type=checkbox]:checked + label:before {
     font-size: 40px;
   }
 
-  .score-form{
-      display: none;
-  }
-
   .score-form-box{
       display: flex;
       flex-flow: row wrap;
@@ -417,10 +413,6 @@ input[type=checkbox]:checked + label:before {
     font-weight: 400;
     padding: 0 40px 0 40px;
     margin: 0 0 45px 0;
-}
-
-.initial .score-form{
-    display: block !important;
 }
 
 .download-btn{
@@ -485,4 +477,8 @@ input[type=checkbox]:checked + label:before {
     width: 22px;
     height: 22px;
     margin-right: 5px;
+}
+
+#result-box{
+    display: none;
 }
