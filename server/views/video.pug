@@ -1,6 +1,9 @@
 extends layouts/main
 block content
     p Main
+
+    form(action="/", method="get")
+        input(type="submit", value="home")
     iframe(src=video.url + "?autoplay=1", width='50%', height = '50%')
     br
     form(action="/contents/videos", method="get")

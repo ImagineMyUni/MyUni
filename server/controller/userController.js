@@ -4,8 +4,8 @@ import jwt from 'jsonwebtoken';
 import User from '../database/models/User';
 import async from 'async';
 import bcrypt from 'bcrypt';
-import passport, { Passport } from 'passport';
-import { type } from 'os';
+import passport from 'passport';
+
 
 export const home = (req, res) => {
     return res.render('home');
@@ -122,7 +122,6 @@ export const postEditProfile = (req, res) => {
 }
 
 export const getLogout = (req, res) => {
-    
     req.logout();
     req.session.save(() => {
         return res.redirect('/');
@@ -163,7 +162,6 @@ export const postGoogleLogin = (req, res) => {
 
 export const kakaoLogin = passport.authenticate("kakao");
 export const kakaoLoginCallback = async (_, __, profile, cb) => {
-	console.log(profile);
     try {
         const name = profile._json.properties.nickname;
         const kakaoId = profile._json.id;

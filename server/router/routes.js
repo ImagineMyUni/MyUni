@@ -11,15 +11,22 @@ const USER_DETAIL = "/:id"
 const EDIT_PROFILE = "/:id/edit"
 
 // Contents
-const CONTENTS = "/contents";
-const CONTENTS_VIDEO_LIST = "/videos";
-const CONTENTS_VIDEO = "/video/:id";
-const VIDEO_POST = "/video/post";
+// const CONTENTS = "/contents";
+// const CONTENTS_VIDEO_LIST = "/videos";
+// const CONTENTS_VIDEO = "/video/:id";
+// const VIDEO_POST = "/video/post";
 
 const CONVERTER = "/converter";
 const UNIVERSITY = "/university";
+
 // API
 const API = "/api";
+const EACH_CONVERTER = "/converter/each_converter";
+const EDU_VIDEO = "/edu/contents/video";
+const TEST = "/tested";
+// const APPLY_STRATEGY_VIDEO = "/edu/contents/apply"
+// const INTRODUCE_ME_VIDEO = "/edu/contents/introduce"
+// const INTERVIEW_VIDEO = "/edu/contents/interview"
 
 //Google
 const GOOGLE = "/oauth/google";
@@ -55,17 +62,23 @@ const routes = {
 
     api: API,
     converter: CONVERTER,
+    each_converter: EACH_CONVERTER,
+    edu_video: EDU_VIDEO,
+    // apply_strategy_video: APPLY_STRATEGY_VIDEO,
+    // introduce_me_video: INTRODUCE_ME_VIDEO,
+    // interview_video: INTERVIEW_VIDEO,
     
-    contents: CONTENTS,
-    contents_video_list : CONTENTS_VIDEO_LIST,
-    contents_video: (id) => {
-        if (id) {
-            return `/video/${id}`;
-        } else {
-            return CONTENTS_VIDEO;
-        }
-    },
-    video_post: VIDEO_POST,
+    // // contents: CONTENTS,
+    // contents_video_list : CONTENTS_VIDEO_LIST,
+    // contents_video: (id) => {
+    //     if (id) {
+    //         return `/video/${id}`;
+    //     } else {
+    //         return CONTENTS_VIDEO;
+    //     }
+    // },
+
+    // video_post: VIDEO_POST,
     university: UNIVERSITY,
     
     google: GOOGLE,

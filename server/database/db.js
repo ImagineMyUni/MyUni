@@ -2,8 +2,6 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 dotenv.config();
 
-/* FIX : 로그를 Text로 따로 저장해야할 것 같은데 */
-
 mongoose.connect(
     process.env.MONGO_URL,
     {

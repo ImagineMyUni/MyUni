@@ -7,6 +7,7 @@ import './database/db'
 import './database/models/User'
 import './database/models/Video';
 import './database/models/University'; 
+import './database/models/Board'; 
 
 dotenv.config();
 

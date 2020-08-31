@@ -1,2 +1,123 @@
 import University from '../database/models/University';
+import { kaya, kacheon, catholickwan, gangneung_wonju, kwangwon, daegu_catholic, dongeu, mockpo_haeyang, baeksuk, kyungki } from './converter/globalConverter';
+import Board from '../database/models/Board'
 
+var result = {};
+// 국 영 수 사회 과학 역사 선택
+function str_to_int(req) {
+     const {
+        status, korean, english, math, society, science, history, choice
+    } = req.query;
+
+    let st = parseInt(status, 10);
+    let k = parseInt(korean, 10);
+    let e = parseInt(english, 10);
+    let m = parseInt(math, 10);
+    let s = parseInt(society, 10);
+    let sc = parseInt(science, 10);
+    let h = parseInt(history, 10);
+    let c = parseInt(choice, 10);
+
+    return {
+        st, k,e,m,s,sc,h,c
+    };
+}
+
+export function getEachConverter (req, res) {
+    // result = str_to_int(req);
+    // let convertedScoreList = [];
+    
+    // // Converted Score // 
+    // convertedScoreList.push(kaya(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
+    // convertedScoreList.push(kacheon(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
+    // convertedScoreList.push(catholickwan(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
+    // convertedScoreList.push(gangneung_wonju(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
+    // convertedScoreList.push(kwangwon(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
+    // convertedScoreList.push(daegu_catholic(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
+    // convertedScoreList.push(dongeu(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
+    // convertedScoreList.push(mockpo_haeyang(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
+    // convertedScoreList.push(baeksuk(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
+    // convertedScoreList.push(kyungki(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
+    // convertedScoreList.push(kwangwon(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
+    // convertedScoreList.push(kwangwon(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
+    // convertedScoreList.push(kwangwon(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
+    // convertedScoreList.push(kwangwon(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
+    // convertedScoreList.push(kwangwon(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
+    // return res.json({
+    //     convertedScoreList
+    // });
+}
+
+export async function getEduVideo (req, res) {
+    const {
+        type
+    } = req.query;
+
+    const result = await Board.findAll(type);
+    const message = (
+        type == 1 ? "Successfully Get Apply Strategy Video" : (
+            type == 2 ? "Successfully Get Introduce Video" :
+                "Successfully Get Interview Video"
+        )
+    );
+    return res.json({
+        result,
+        message
+    });
+};
+
+export async function getConversion(req, res) {
+    const score = str_to_int(req);
+    let result = [];
+
+    result.push(await University.typeZero(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
+    result.push(await University.typeOne(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
+    result.push(await University.typeTwo(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
+    result.push(await University.typeThree(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
+    result.push(await University.typeFour(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
+    result.push(await University.typeFive(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
+
+    console.log(result);
+
+    return res.json({
+        result
+    });
+};
+
+// export function getApplyStrategyVideo(req, res) {
+//     const {
+//         type
+//     } = req.query;
+
+//     const result = Board.findAll(type);
+//     console.log(result);
+
+//     return res.json({
+//         result,
+//         message: "Get Apply Strategy video Suuccessfully"
+//     });
+// };
+
+// export function getIntroduceVideo(req, res) {
+//     const {
+//         type
+//     } = req.query;
+//     const result = Board.findAll(type);
+    
+//     return res.json({
+//         result,
+//         message: "Get Introduce Video Successfully"
+//     });
+// };
+
+// export function getInterviewVideo(req, res) {
+//     const {
+//         type
+//     } = req.query;
+//     const result = Board.findAll(type);
+
+//     return res.json({
+//         result,
+//         message: "Get Interview Video Successfully"
+//     });
+// };

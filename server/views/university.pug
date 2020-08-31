@@ -1,6 +1,8 @@
 extends layouts/main
 block content
     p Main
+    form(action="/", method="get")
+        input(type="submit", value="Home")
     form(action="/contents/university/", method="post")
         label 대학이름
         input(type="text", name="universityName")

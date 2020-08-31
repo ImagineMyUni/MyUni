@@ -10,14 +10,14 @@ import { onlyPublic, onlyPrivate, isAuthenticated } from '../middleware/auth';
 
 const globalRouter = express.Router();
 
-globalRouter.get(routes.home, home);
+// globalRouter.get(routes.home, home);
 
-globalRouter.get(routes.login,onlyPublic, getLogin);
+// globalRouter.get(routes.login,onlyPublic, getLogin);
 // globalRouter.post(routes.login, postLogin);
 
 globalRouter.get(routes.logout, onlyPrivate,getLogout);
 
-globalRouter.get(routes.join, onlyPublic, getJoin);
+// globalRouter.get(routes.join, onlyPublic, getJoin);
 // globalRouter.post(routes.join, postJoin);
 
 globalRouter.get(routes.google, onlyPublic, googleLogin);

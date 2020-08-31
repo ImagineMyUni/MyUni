@@ -55,7 +55,7 @@ app.use(localsMiddleware);
 app.use(routes.home, globalRouter);
 app.use(routes.user, userRouter);
 app.use(routes.api, apiRouter);
-app.use(routes.contents, contentsRouter);
+// app.use(routes.contents, contentsRouter);
 
 app.set('view engine', 'pug');
 
