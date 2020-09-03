@@ -8,8 +8,8 @@ import University from '../database/models/University';
 
 const apiRouter = express.Router();
 
-apiRouter.get('/test', getConversion);
-apiRouter.get(routes.each_converter, getEachConverter);
+apiRouter.get(routes.each_converter, getConversion);
+// apiRouter.get(routes.each_converter, getEachConverter);
 
 apiRouter.get(routes.edu_video, getEduVideo);
 
