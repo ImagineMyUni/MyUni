@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>로그인</title>
+        <link rel="stylesheet" href="../assets/css/index.css">
+        <script src="../https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    </head>
+    <body>
+        <img id="limit-img" src="../assets//img/test.jpg"/>
+		<div class="main-contents">
+            <div class="main">
+                <div class="div4-2 box">
+                    <div class="div4-2-1">
+                        <div class="flex-item-6">
+                            <a href="convert.html"><img src="../assets/img/logo/마이유니-타이포-버전.png" class="logo-img" srcset="../assets/img/logo/마이유니-타이포-버전@2x.png 2x,
+                        assets/img/logo/마이유니-타이포-버전@3x.png 3x"/></a>
+                        </div>
+                        <div class="flex-item-6" id="easy-login-txt">
+                            간편로그인
+                        </div>
+                    </div>
+                    <div class="div4-2-2">
+                        <p class="easy-login"><a href="javascript:loginWithKakao()"><img src="../assets/img/그룹 93_2020-08-11/그룹 93.png" srcset="../assets/img/그룹 93_2020-08-11/그룹 93@2x.png 2x,iassets/img/그룹 93_2020-08-11/그룹 93@3x.png 3x" class="-\39 3"></a></p>
+                        <p class="easy-login"><a href="#"><img src="../assets/img/그룹 94_2020-08-11/그룹 94.png" srcset="../assets/img/그룹 94_2020-08-11/그룹 94@2x.png 2x,iassets/img/그룹 94_2020-08-11/그룹 94@3x.png 3x" class="-\39 3"></a></p>
+                        <p class="easy-login"><a href="#"><img src="../assets/img/그룹 95_2020-08-11/그룹 95.png" srcset="../assets/img/그룹 95_2020-08-11/그룹 95@2x.png 2x,iassets/img/그룹 95_2020-08-11/그룹 95@3x.png 3x" class="-\39 3"></a></p>
+                        <p class="easy-login"><a href="#"><img src="..assets/img/그룹 97_2020-08-11/그룹 97.png" srcset="../assets/img/그룹 97_2020-08-11/그룹 97@2x.png 2x,iassets/img/그룹 97_2020-08-11/그룹 97@3x.png 3x" class="-\39 3"></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p id="token-result"></p>
+        <script type="text/javascript">
+        // async function kakaoLogin(){
+
+        // }
+        // async function requestCode(){
+        //     let RestApiKey = '08456aca658eab1126304efb7632b466';
+        //     let redirect_uri = 'http://127.0.0.1:5500/front_hard/index4_login.html';
+            
+        //     const codeResponse = await fetch(
+        //         'https://kauth.kakao.com/oauth/authorize?client_id=08456aca658eab1126304efb7632b466&redirect_uri={REDIRECT_URI}&response_type=code'
+        //     )
+        // }
+
+        function loginWithKakao() {
+            Kakao.Auth.authorize({
+            redirectUri: 'https://developers.kakao.com/tool/demo/oauth'
+            })
+        }
+        // 아래는 데모를 위한 UI 코드입니다.
+        getToken()
+        function getToken() {
+            const token = getCookie('authorize-access-token')
+            if(token) {
+            Kakao.Auth.setAccessToken(token)
+            document.getElementById('token-result').innerText = 'login success. token: ' + Kakao.Auth.getAccessToken()
+            }
+        }
+        function getCookie(name) {
+            const value = "; " + document.cookie;
+            const parts = value.split("; " + name + "=");
+            if (parts.length === 2) return parts.pop().split(";").shift();
+        }
+        </script>
+    </body>
+</html>

@@ -104,9 +104,9 @@ a{
 }
 
 .box-title{
-    font-size: 40px;
+    font-size: 42px;
     font-weight: 500;
-    padding: 20px 40px 20px 40px;
+    padding: 10px 40px 20px 40px;
 }
 
 input[type=checkbox] {  
@@ -181,6 +181,10 @@ input[type=checkbox]:checked + label:before {
     height: 85px;
     left: 35px;
     top: -5px;
+}
+
+.sub-form{
+    margin-bottom: 25px;
 }
 
 .sub-form label{
@@ -395,6 +399,7 @@ input[type=checkbox]:checked + label:before {
     color: white;
     font-size: 40px;
     margin-left: 10%;
+    margin-bottom: 50px;
 }
 
 .div5-1{
