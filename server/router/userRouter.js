@@ -7,6 +7,5 @@ const userRouter = express.Router();
 
 userRouter.get(routes.userDetail(), onlyPrivate,getUserDetail);
 
-
 export default userRouter;
 

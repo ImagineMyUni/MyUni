@@ -49,20 +49,23 @@ export function getEachConverter (req, res) {
 }
 
 export async function getEduVideo (req, res) {
-    const {
-        type
-    } = req.query;
+    // const {
+    //     type
+    // } = req.query;
 
-    const result = await Board.findAll(type);
-    const message = (
-        type == 1 ? "Successfully Get Apply Strategy Video" : (
-            type == 2 ? "Successfully Get Introduce Video" :
-                "Successfully Get Interview Video"
-        )
-    );
+    // const result = await Board.findAll(type);
+    // const message = (
+    //     type == 1 ? "Successfully Get Apply Strategy Video" : (
+    //         type == 2 ? "Successfully Get Introduce Video" :
+    //             "Successfully Get Interview Video"
+    //     )
+    // );
+
+    const result = await Board.find({});
+
     return res.json({
         result,
-        message
+        // message
     });
 };
 
@@ -70,14 +73,20 @@ export async function getConversion(req, res) {
     const score = str_to_int(req);
     let result = [];
 
+    res.setHeader("Access-Control-Allow-Origin", req.getHeader("Origin"));
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+    res.setHeader("Access-Control-Max-Age", "3600");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, remember-me");
+    res.setHeader("Content-Type", "application/json");
+    res.setHeader("Accept", "application/json");
+
     result.push(await University.typeZero(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
     result.push(await University.typeOne(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
     result.push(await University.typeTwo(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
     result.push(await University.typeThree(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
     result.push(await University.typeFour(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
     result.push(await University.typeFive(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
-
-    console.log(result);
 
     return res.json({
         result

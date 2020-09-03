@@ -87,8 +87,6 @@ UniversitySchema.statics.typeTwo = async (kor, eng, his, math, society, science,
                 let thisScores = scores.map(score => score);
                 let hab = 0, weightHab = 0;
                 
-                
-
                 for (var i = 0; i < univ.weight.length; i++) {
                     thisScores[i] *= univ.weight[i];
                     hab += thisScores[i];
@@ -152,14 +150,17 @@ UniversitySchema.statics.typeFour = async function (kor = null, eng = null, his 
     const university = await University.find({type:4})
         .then((document) => {
             return document.map(univ => {
-                let hab = 0;
+                let hab = 0, weightHab = 0, thisScores = scores.map(x=>x);
                 // weight 곱하기 + type 4니까 avg grade ㄱㄱ
                 for (var i = 0; i < scores.length; i++) {
-                    scores[i] *= univ.weight[i];
-                    hab += scores[i];
+                    thisScores[i] *= univ.weight[i];
+                    hab += thisScores[i];
+                    weightHab += univ.weight[i];
                 }
                 
-                let avg = hab / scores.length, converted;
+                let avg = hab / weightHab, converted;
+                console.log(avg, univ.university);
+              
                 for (var i = 0; i < univ.standard.length; i++) {
                     if (avg >= univ.standard[i]) {
                         converted = univ.result[i];
@@ -179,38 +180,29 @@ UniversitySchema.statics.typeFour = async function (kor = null, eng = null, his 
     return university;
 };
 
+// Total Score Function 
 UniversitySchema.statics.typeFive = async function (kor = null, eng = null, his = null, math = null, society = null, science, select) {
-//     let scores = [kor, eng, math, his, society, science, select];
-//     const university = await University.find({type:5})
-//         .then((document) => {
-//             return document.map(univ => {
-//                 let hab = 0;
-//                 // weight 곱하기 + type 4니까 avg grade ㄱㄱ
-//                 for (var i = 0; i < scores.length; i++) {
-//                     scores[i] *= univ.weight[i];
-//                     hab += scores[i];
-//                 }
+    
+    // avg 구해서 함수 통과시키기
+    const university = await University.find({ type: 5 })
+        .then((document) => {
+            return document.map(doc => {
+                const totalWeightedScore = (kor * doc.weight[0] + eng * doc.weight[1] +
+                    his * doc.weight[2] + math * doc.weight[3] + society * doc.weight[4] + science * doc.weight[5] + select * doc.weight[6]);
                 
-//                 let avg = hab / scores.length, grade;
-//                 for (var i = 0; i < univ.standard.length; i++) {
-//                     if (avg >= univ.standard[i]) {
-//                         grade = univ.result[i];
-//                         break;
-//                     }
-//                 }
+                const converted = doc.func(totalWeightedScore);
+                return {
+                    university: doc.university,
+                    area: doc.area,
+                    converted
+                };
+            });
+        })
+        .catch(err => { console.log(err) });
+    
+    return university;
 
-//                 return {
-//                     university: univ.university,
-//                     area: univ.area,
-//                     grade
-//                 }
-//             });
-//         })
-//         .catch(err => { console.log(err) });
-//     console.log(university);
 };
-
-
 
 const University = mongoose.model("University", UniversitySchema);
 
