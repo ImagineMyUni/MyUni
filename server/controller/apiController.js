@@ -1,6 +1,8 @@
 import University from '../database/models/University';
 import { kaya, kacheon, catholickwan, gangneung_wonju, kwangwon, daegu_catholic, dongeu, mockpo_haeyang, baeksuk, kyungki } from './converter/globalConverter';
 import Board from '../database/models/Board'
+import Video from '../database/models/Video';
+
 
 var result = {};
 // 국 영 수 사회 과학 역사 선택
@@ -61,8 +63,8 @@ export async function getEduVideo (req, res) {
     //     )
     // );
 
-    const result = await Board.find({});
-
+    const result = await Video.find({});
+    
     return res.json({
         result,
         // message

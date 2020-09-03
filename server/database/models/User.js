@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
-import bcrypt from "bcrypt";
+// import bcrypt from "bcrypt";
 // bcrypt는 crypto보다 보안 수준 높지만 느림 
 // 그래서 비밀번호에만 쓸 예정
-import async from 'async';
-const saltRounds = 10;
+// import async from 'async';
+// const saltRounds = 10;
 
 const UserSchema = new mongoose.Schema({
     email: { type: String },

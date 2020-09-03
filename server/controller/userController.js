@@ -3,7 +3,6 @@ import crypto from 'crypto';
 import jwt from 'jsonwebtoken';
 import User from '../database/models/User';
 import async from 'async';
-import bcrypt from 'bcrypt';
 import passport from 'passport';
 
 

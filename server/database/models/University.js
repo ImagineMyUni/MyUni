@@ -160,7 +160,7 @@ UniversitySchema.statics.typeFour = async function (kor = null, eng = null, his 
                 
                 let avg = hab / weightHab, converted;
                 console.log(avg, univ.university);
-              
+
                 for (var i = 0; i < univ.standard.length; i++) {
                     if (avg >= univ.standard[i]) {
                         converted = univ.result[i];
@@ -201,7 +201,6 @@ UniversitySchema.statics.typeFive = async function (kor = null, eng = null, his 
         .catch(err => { console.log(err) });
     
     return university;
-
 };
 
 const University = mongoose.model("University", UniversitySchema);
