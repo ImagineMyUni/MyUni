@@ -4,7 +4,6 @@ import Board from '../database/models/Board'
 import Video from '../database/models/Video';
 import Review from '../database/models/Review';
 
-
 var result = {};
 // 국 영 수 사회 과학 역사 선택
 function str_to_int(req) {
@@ -112,6 +111,19 @@ export async function getReviewBoard(req, res) {
         result,
         message
     });
+}
+
+export async function postReviewPost(req, res) {
+    const {
+        title, body, author, password
+    } = req.body;
+
+    const newPost = new Review({ title, body, author, password });
+    newPost.save((err) => {
+        if (err) console.log(err);
+    });
+
+    return res.sendStatus(200);
 }
 
 export async function getReviewPost(req, res) {
