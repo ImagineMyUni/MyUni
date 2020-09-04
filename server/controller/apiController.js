@@ -97,20 +97,20 @@ export async function getConversion(req, res) {
 
 export async function getReviewBoard(req, res) {
     let message = "";
+    
     try {
         const result = await Review.find({});
         message = "Get ReviewBoard Success";
-
+        return res.json({
+            result,
+            message
+        });
     } catch (error){
         console.log(error);
         return res.json({
             message: "Get ReviewBoard Fail"
         });
     };
-    return res.json({
-        result,
-        message
-    });
 }
 
 export async function postReviewPost(req, res) {
@@ -120,7 +120,11 @@ export async function postReviewPost(req, res) {
 
     const newPost = new Review({ title, body, author, password });
     newPost.save((err) => {
-        if (err) console.log(err);
+        if (err) {
+            console.log(err);
+            re
+        }
+        
     });
 
     return res.sendStatus(200);
