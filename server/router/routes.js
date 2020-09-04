@@ -24,6 +24,9 @@ const API = "/api";
 const EACH_CONVERTER = "/converter/each_converter";
 const EDU_VIDEO = "/edu/contents/video";
 const TEST = "/tested";
+const REVIEW_BOARD = "/review_board";
+const REVIEW_POST = "/review_post";
+
 // const APPLY_STRATEGY_VIDEO = "/edu/contents/apply"
 // const INTRODUCE_ME_VIDEO = "/edu/contents/introduce"
 // const INTERVIEW_VIDEO = "/edu/contents/interview"
@@ -64,6 +67,8 @@ const routes = {
     converter: CONVERTER,
     each_converter: EACH_CONVERTER,
     edu_video: EDU_VIDEO,
+    review_board: REVIEW_BOARD,
+    review_post:REVIEW_POST,
     // apply_strategy_video: APPLY_STRATEGY_VIDEO,
     // introduce_me_video: INTRODUCE_ME_VIDEO,
     // interview_video: INTERVIEW_VIDEO,

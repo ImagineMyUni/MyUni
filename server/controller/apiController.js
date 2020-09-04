@@ -2,6 +2,7 @@ import University from '../database/models/University';
 import { kaya, kacheon, catholickwan, gangneung_wonju, kwangwon, daegu_catholic, dongeu, mockpo_haeyang, baeksuk, kyungki } from './converter/globalConverter';
 import Board from '../database/models/Board'
 import Video from '../database/models/Video';
+import Review from '../database/models/Review';
 
 
 var result = {};
@@ -95,40 +96,24 @@ export async function getConversion(req, res) {
     });
 };
 
-// export function getApplyStrategyVideo(req, res) {
-//     const {
-//         type
-//     } = req.query;
+export async function getReviewBoard(req, res) {
+    let message = "";
+    try {
+        const result = await Review.find({});
+        message = "Get ReviewBoard Success";
 
-//     const result = Board.findAll(type);
-//     console.log(result);
+    } catch (error){
+        console.log(error);
+        return res.json({
+            message: "Get ReviewBoard Fail"
+        });
+    };
+    return res.json({
+        result,
+        message
+    });
+}
 
-//     return res.json({
-//         result,
-//         message: "Get Apply Strategy video Suuccessfully"
-//     });
-// };
-
-// export function getIntroduceVideo(req, res) {
-//     const {
-//         type
-//     } = req.query;
-//     const result = Board.findAll(type);
+export async function getReviewPost(req, res) {
     
-//     return res.json({
-//         result,
-//         message: "Get Introduce Video Successfully"
-//     });
-// };
-
-// export function getInterviewVideo(req, res) {
-//     const {
-//         type
-//     } = req.query;
-//     const result = Board.findAll(type);
-
-//     return res.json({
-//         result,
-//         message: "Get Interview Video Successfully"
-//     });
-// };
+}
