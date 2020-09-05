@@ -19,6 +19,7 @@ const UniversitySchema = new mongoose.Schema({
     standard: { type: [Number] },
     result: { type: [Number] },
     func: { type: Function },
+    link: { type: String },
 });
 
 UniversitySchema.statics.typeZero = async (kor, eng, his, math, society, science, select) => {
