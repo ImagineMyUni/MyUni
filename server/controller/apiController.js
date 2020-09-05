@@ -75,8 +75,10 @@ export async function getConversion(req, res) {
     const score = str_to_int(req);
     let result = [];
     const contentOrigin = req.getHeader('Origin');
-
-    res.setHeader("Access-Control-Allow-Origin", contentOrigin);
+    if (contentOrigin != null)
+        res.setHeader("Access-Control-Allow-Origin", contentOrigin);
+    else
+        res.setHeader("Access-Control-Allow-Origin", "true");    
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
     res.setHeader("Access-Control-Max-Age", "3600");
