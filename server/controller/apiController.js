@@ -65,7 +65,7 @@ export async function getEduVideo (req, res) {
 
     const result = await Video.find({});
     
-    return res.json({
+    return res.jsonp({
         result,
         // message
     });
@@ -93,7 +93,7 @@ export async function getConversion(req, res) {
     result.push(await University.typeFour(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
     result.push(await University.typeFive(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
 
-    return res.json({
+    return res.jsonp({
         result
     });
 };
@@ -102,13 +102,13 @@ export async function getReviewBoard(req, res) {
     try {
         const result = await Review.find({});
         const message = "Get ReviewBoard Success";
-        return res.json({
+        return res.jsonp({
             result,
             message
         });
     } catch (error){
         console.log(error);
-        return res.json({
+        return res.jsonp({
             message: "Get ReviewBoard Fail"
         });
     };
