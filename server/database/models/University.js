@@ -35,11 +35,20 @@ UniversitySchema.statics.typeZero = async (kor, eng, his, math, society, science
                 return {
                     university: doc.university,
                     area: doc.area,
-                    converted
+                    converted,
+                    link:univ.link
                 };
             });
         })
-        .catch(err => { console.log(err) });
+        .catch(err => {
+            console.log(err);
+            return {
+                university: doc.university,
+                area: doc.area,
+                converted: 0,
+                link : univ.link
+            }
+        });
     
     return university;
 };
@@ -69,11 +78,19 @@ UniversitySchema.statics.typeOne = async (kor, eng, his, math, society, science,
                 return {
                     university: univ.university,
                     area: univ.area,
-                    converted
+                    converted,
+                    link: univ.link
                 }
             });
         })
-        .catch(err => { console.log(err) });
+        .catch(err => {
+            console.log(err);
+            return {
+                university: doc.university,
+                area: doc.area,
+                converted: 0,
+                link : univ.link
+            }});
     
     return university;
 };
@@ -100,13 +117,22 @@ UniversitySchema.statics.typeTwo = async (kor, eng, his, math, society, science,
                         return {
                             university: univ.university,
                             area: univ.area,
-                            converted: univ.result[i]
+                            converted: univ.result[i],
+                            link: univ.link
                         };
                     };
                 };
             });
         })
-        .catch(err => { console.log(err) });
+        .catch(err => {
+            console.log(err);
+            return {
+                university: doc.university,
+                area: doc.area,
+                converted: 0,
+                link : univ.link
+            }
+        });
     
     return university;
 };
@@ -136,11 +162,20 @@ UniversitySchema.statics.typeThree = async (kor, eng, his, math, society, scienc
                 return {
                     university: univ.university,
                     area: univ.area,
-                    converted
+                    converted,
+                    link: univ.link
                 };
             });
         })
-        .catch(err => { console.log(err) });
+        .catch(err => {
+            console.log(err);
+            return {
+                university: doc.university,
+                area: doc.area,
+                converted: 0,
+                link : univ.link
+            }
+        });
     
     return university;
 };
@@ -171,11 +206,20 @@ UniversitySchema.statics.typeFour = async function (kor = null, eng = null, his 
                 return {
                     university: univ.university,
                     area: univ.area,
-                    converted
+                    converted,
+                    link: univ.link
                 }
             });
         })
-        .catch(err => { console.log(err) });
+        .catch(err => {
+            console.log(err);
+            return {
+                university: doc.university,
+                area: doc.area,
+                converted: 0,
+                link : univ.link
+            }
+        });
     
     return university;
 };
@@ -198,7 +242,15 @@ UniversitySchema.statics.typeFive = async function (kor = null, eng = null, his 
                 };
             });
         })
-        .catch(err => { console.log(err) });
+        .catch(err => {
+            console.log(err);
+            return {
+                university: doc.university,
+                area: doc.area,
+                converted: 0,
+                link : univ.link
+            }
+        });
     
     return university;
 };
