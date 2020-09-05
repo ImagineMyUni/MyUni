@@ -170,10 +170,8 @@ UniversitySchema.statics.typeThree = async (kor, eng, his, math, society, scienc
         .catch(err => {
             console.log(err);
             return {
-                university: doc.university,
-                area: doc.area,
+                university: "NULL",
                 converted: 0,
-                link : univ.link
             }
         });
     
@@ -214,10 +212,8 @@ UniversitySchema.statics.typeFour = async function (kor = null, eng = null, his 
         .catch(err => {
             console.log(err);
             return {
-                university: doc.university,
-                area: doc.area,
+                university: "NULL",
                 converted: 0,
-                link : univ.link
             }
         });
     
@@ -238,17 +234,16 @@ UniversitySchema.statics.typeFive = async function (kor = null, eng = null, his 
                 return {
                     university: doc.university,
                     area: doc.area,
-                    converted
+                    converted,
+                    link : doc.link
                 };
             });
         })
         .catch(err => {
             console.log(err);
             return {
-                university: doc.university,
-                area: doc.area,
+                university: "NULL",
                 converted: 0,
-                link : univ.link
             }
         });
     
