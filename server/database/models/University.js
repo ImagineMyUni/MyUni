@@ -36,17 +36,15 @@ UniversitySchema.statics.typeZero = async (kor, eng, his, math, society, science
                     university: doc.university,
                     area: doc.area,
                     converted,
-                    link:univ.link
+                    link:doc.link
                 };
             });
         })
         .catch(err => {
             console.log(err);
             return {
-                university: doc.university,
-                area: doc.area,
+                university: "NULL",
                 converted: 0,
-                link : univ.link
             }
         });
     
@@ -86,10 +84,8 @@ UniversitySchema.statics.typeOne = async (kor, eng, his, math, society, science,
         .catch(err => {
             console.log(err);
             return {
-                university: doc.university,
-                area: doc.area,
+                university: "NULL",
                 converted: 0,
-                link : univ.link
             }});
     
     return university;
@@ -127,10 +123,8 @@ UniversitySchema.statics.typeTwo = async (kor, eng, his, math, society, science,
         .catch(err => {
             console.log(err);
             return {
-                university: doc.university,
-                area: doc.area,
+                university: "NULL",
                 converted: 0,
-                link : univ.link
             }
         });
     
