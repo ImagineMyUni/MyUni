@@ -74,17 +74,17 @@ export async function getEduVideo (req, res) {
 export async function getConversion(req, res) {
     const score = str_to_int(req);
     let result = [];
-    const contentOrigin = req.getHeader('Origin');
+    const contentOrigin = req.get('Origin');
     if (contentOrigin != null)
-        res.setHeader("Access-Control-Allow-Origin", contentOrigin);
+        res.set("Access-Control-Allow-Origin", contentOrigin);
     else
-        res.setHeader("Access-Control-Allow-Origin", "true");    
-    res.setHeader("Access-Control-Allow-Credentials", "true");
-    res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
-    res.setHeader("Access-Control-Max-Age", "3600");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, remember-me");
-    res.setHeader("Content-Type", "application/json");
-    res.setHeader("Accept", "application/json");
+        res.set("Access-Control-Allow-Origin", "true");    
+    res.set("Access-Control-Allow-Credentials", "true");
+    res.set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+    res.set("Access-Control-Max-Age", "3600");
+    res.set("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, remember-me");
+    res.set("Content-Type", "application/json");
+    res.set("Accept", "application/json");
 
     result.push(await University.typeZero(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
     result.push(await University.typeOne(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
