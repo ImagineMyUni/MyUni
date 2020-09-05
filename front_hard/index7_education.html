@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>대학입시 소양교육</title>
+        <link rel="stylesheet" href="assets/css/index.css">
+        <script type="text/javascript" src="assets/js/jquery-3.5.1.min.js"></script>
+    </head>
+    <body>
+        <div class="div7">
+            <div class="div-top div7-1">
+                 <img src="assets/img/logo/마이유니-타이포-버전.png" class="logo-img" srcset="assets/img/logo/마이유니-타이포-버전@2x.png 2x,assets/img/logo/마이유니-타이포-버전@3x.png 3x"/>
+                 <a href="#" class="login-btn"><img src="assets/img/그룹 453_2020-08-11/그룹 453.png" srcset="assets/img/그룹 453_2020-08-11/그룹 453@2x.png 2x,assets/img/그룹 453_2020-08-11/그룹 453@3x.png 3x" class="-\34 53"></a>
+             </div> 
+             <div>
+                <nav class="contents">
+                    <ul>
+                        <li><a href="#">비교내신 환산</a></li>
+                        <li><a href="#">대학 정보</a></li>
+                        <li><a href="#">대학 입시 소양교육</a></li>
+                    </ul>
+                </nav>
+             </div>
+             <div class="div7-2 box">
+                 <h1 class="box-title">대입 전형 지원 전략</h1>
+                 <img src="assets/svg/Down arrow.svg" class="expand-btn" id="expand1"/>
+                 <div class="detail-box" id="expand1-detail">
+                     <table class="result-table">
+                         <thead>
+                             <tr>
+                                 <th>목차</th>
+                                 <th>제목</th>
+                                 <th>링크</th>
+                             </tr>
+                         </thead>
+                         <tbody>
+                             <tr>
+                                 <td>1</td>
+                                 <td>학교 밖 청소년 대학 입시 소양교육 소개</td>
+                                 <td><a class="link-btn" href="#"><img src="assets/img/이미지 16_2020-08-11/이미지 16.png" srcset="assets/img/이미지 16_2020-08-11/이미지 16@2x.png 2x,assets/img/이미지 16_2020-08-11/이미지 16@3x.png 3x" class="-\31 6"/></a></td>
+                             </tr>
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+             <div class="div7-3 box">
+                <h1 class="box-title">자기소개서 준비</h1>
+                <img src="assets/svg/Down arrow.svg" class="expand-btn" id="expand2"/>
+                <div class="detail-box" id="expand2-detail">
+                    <table class="result-table">
+                        <thead>
+                            <tr>
+                                <th>목차</th>
+                                <th>제목</th>
+                                <th>링크</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>학교 밖 청소년 대학 입시 소양교육 소개</td>
+                                <td><a class="link-btn" href="#"><img src="assets/img/이미지 16_2020-08-11/이미지 16.png" srcset="assets/img/이미지 16_2020-08-11/이미지 16@2x.png 2x,assets/img/이미지 16_2020-08-11/이미지 16@3x.png 3x" class="-\31 6"/></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="div7-4 box">
+                <h1 class="box-title">면접 준비</h1>
+                <img src="assets/svg/Down arrow.svg" class="expand-btn" id="expand3"/>
+                <div class="detail-box" id="expand3-detail">
+                    <table class="result-table">
+                        <thead>
+                            <tr>
+                                <th>목차</th>
+                                <th>제목</th>
+                                <th>링크</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>학교 밖 청소년 대학 입시 소양교육 소개</td>
+                                <td><a class="link-btn" href="#"><img src="assets/img/이미지 16_2020-08-11/이미지 16.png" srcset="assets/img/이미지 16_2020-08-11/이미지 16@2x.png 2x,assets/img/이미지 16_2020-08-11/이미지 16@3x.png 3x" class="-\31 6"/></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $('.expand-btn').click(
+                function(){
+                    var detail = $(this).attr('id') + '-detail';
+                    var detail_ele = $('#'+detail);
+                    $('.detail-box').css('display', 'none');
+                    if (detail_ele.css('display') == 'none'){
+                        detail_ele.css('display', 'block');
+                    }else{
+                        detail_ele.css('display', 'none');
+                    }
+                }
+            )
+        </script>
+    </body>
+</html>

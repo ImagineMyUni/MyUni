@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 32px;
+}
+
+.main{
+    position: relative;
+    padding-top: 150%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.div-top{
+    margin-bottom: 30px;
+}
+
+.header-top{
+    position: relative;
+    margin-bottom: 50px;
+    padding: 0 35px;
+}
+
+.logo-img {
+    width: auto;
+    height: 100px;
+    object-fit: contain;
+  }
+
+.login-btn{
+    position: absolute;
+    width: 120px;
+    height: 50px;
+    font-family: NotoSansCJKkr;
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #383838;
+    right: 35px;
+    top: 25px;
+    text-align: center;
+    background: none;
+    border: none;
+}
+
+header nav{
+    margin: 0 40px 0 20px;
+}
+
+.contents{
+    margin-bottom: 50px;
+}
+
+.contents ul{
+    display: flex;
+    padding: 0;
+}
+
+.contents li{
+    display: block;
+    flex: 0 0 33%;
+    max-width: 33%;
+    text-align: center;
+    font-size: 32px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.box{
+    /* width: -webkit-fill-available; */
+    width: 80%;
+    margin: 50px 10%;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+    min-height: 100px;
+    padding: 15px;
+}
+
+.box-title{
+    font-size: 40px;
+    font-weight: 500;
+    padding: 20px 40px 20px 40px;
+}
+
+input[type=checkbox] {  
+    display: none;  
+}
+
+input[type=checkbox] + label{
+    display: inline-block;  
+    cursor: pointer;  
+    position: relative;  
+    padding-left: 40px;  
+    margin-right: 16px;  
+}
+
+input[type=checkbox]+ label:before {     
+
+    content: "";  
+    display: inline-block;  
+  
+    width: 32px;  
+    height: 32px;  
+  
+    margin-right: 16px;  
+    position: absolute;  
+    left: 0;  
+    bottom: 5px;  
+    background-color: #ccc;  
+    border-radius: 2px; 
+    box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);  
+}
+input[type=checkbox]:checked + label:before { 
+
+    content: "\2713";  /* 체크모양 */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);  
+    font-size: 32px; 
+    font-weight:800; 
+    color: #fff;  
+    background:#2f87c1;
+    text-align: center;  
+    line-height: 18px;  
+
+} 
+
+.div1-4{
+    position: relative;
+}
+
+.svg-btn{
+    position: absolute;
+    background-color: rgba(225, 225, 225, 0);
+    border: none;
+    cursor: pointer;
+}
+
+#input-btn{
+    width: 100px;
+    height: 100px;
+    right: 25px;
+    top: 40px;
+}
+
+#filter-btn{
+    width: 85px;
+    height: 85px;
+    right: 25px;
+    top: -5px;
+}
+
+#find-btn{
+    width: 85px;
+    height: 85px;
+    left: 35px;
+    top: -5px;
+}
+
+.sub-form label{
+    margin: 0 50px 20px 50px;
+}
+
+.filter{
+    display: flex;
+    position: relative;
+}
+
+.uni-name-form input{
+    font-size: 32px;
+    padding-left: 85px;
+    width: 690px;
+    margin: 0 0 0 35px;
+    height: 80px;
+    border: 1.5px solid black;
+    border-radius: 25px;
+}  
+
+.result-table{
+    margin: 0 0 0 35px;
+    width: 90%;
+}
+
+.result-table th{
+    border-bottom: 4px solid rgba(0,0,0,0.16);
+    margin: 0;
+}
+
+.result-table th, .result-table td{
+    font-size: 32px;
+    text-align: center;
+}
+
+.move-table{
+    display: flex;
+    position: relative;
+    height: 60px;
+    margin-top: 5px;
+}
+
+#move--l-btn{
+    width: 60px;
+    height: 60px;
+    left: 65px;
+}
+
+#move-l-btn{
+    width: 60px;
+    height: 60px;
+    left: 120px;
+  }
+
+  #move--r-btn{
+    width: 60px;
+    height: 60px;
+    right: 65px;
+  }
+
+  #move-r-btn{
+    width: 60px;
+    height: 60px;
+    right: 120px;
+  }
+
+  .extra-box{
+      font-size: 25px;
+      width: 90%;
+      padding: 15px 35px 0 35px;
+      color: #535353;
+  }
+
+  .div4-2{
+    position: absolute;
+    /* width: -webkit-fill-available; */
+    width: 80%;
+    left: 10%;
+    top: 25%;
+    margin: 0 !important;
+  }
+
+  .div4-2-1{
+    display: flex;
+    padding: 0px 140px;
+  }
+
+  .div4-2-1 img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .div4-2-1 p{
+      font-size: 40px;
+      margin: 0;
+      padding: 20px 0;
+  }
+
+  .easy-login{
+    padding: 0 150px;
+  }
+
+  .easy-login img{
+      width: 100%;
+      height: auto;
+  }
+
+  .login-btn img{
+      width: auto;
+      height: 100%;
+      margin-right: 50px;
+  }
+
+  .div6-2-1{
+      display: flex; 
+  }
+
+  .div6-2-1 ul{
+      margin: 0 0 50px 0;
+  }
+
+  .div6-2-1 ul li{
+      margin: 0 35px;
+  }
+
+  .div6-3{
+      text-align: center;
+  }
+
+  .Camera{
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      padding-top: 10px;
+  }
+
+  .div7-2, .div7-3, .div7-4{
+    position: relative;
+  }
+
+  .expand-btn{
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    width: 30px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .detail-box{
+      display: none;
+  }
+
+  .link-btn img{
+      width: 24px;
+  }
+
+  .flex-item-6{
+      flex: 0 0 50%;
+  }
+
+  #easy-login-txt{
+    text-align: center;
+    padding: 20px 0;
+    font-size: 40px;
+  }
+
+  .score-form{
+      display: none;
+  }
+
+  .score-form-box{
+      display: flex;
+      flex-flow: row wrap;
+      padding: 30px;
+  }
+
+  .score-input{
+      flex: 0 0 50%;
+      display: flex;
+
+  }
+
+  .score-input input{
+    display: block;
+    width: 50%;
+    height: 70px;
+    border-radius: 6px;
+    border: solid 0.5px #707070;
+    font-size: 40px;
+  }
+
+  .score-input label{
+    display: block;
+    width: 35%;
+    height: 70px;
+    margin-right: 10px;
+    text-align: right;
+    font-size: 40px;
+}
+
+.score-submit{
+    width: 80%;
+    height: 80px;
+    border-radius: 44px;
+    background-color: #4d5c00;
+    color: white;
+    font-size: 40px;
+    margin-left: 10%;
+}
