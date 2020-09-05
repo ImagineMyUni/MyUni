@@ -74,8 +74,9 @@ export async function getEduVideo (req, res) {
 export async function getConversion(req, res) {
     const score = str_to_int(req);
     let result = [];
+    const contentOrigin = req.getHeader('Origin');
 
-    res.setHeader("Access-Control-Allow-Origin", req.getHeader("Origin"));
+    res.setHeader("Access-Control-Allow-Origin", contentOrigin);
     res.setHeader("Access-Control-Allow-Credentials", "true");
     res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
     res.setHeader("Access-Control-Max-Age", "3600");
@@ -96,11 +97,9 @@ export async function getConversion(req, res) {
 };
 
 export async function getReviewBoard(req, res) {
-    let message = "";
-    
     try {
         const result = await Review.find({});
-        message = "Get ReviewBoard Success";
+        const message = "Get ReviewBoard Success";
         return res.json({
             result,
             message
