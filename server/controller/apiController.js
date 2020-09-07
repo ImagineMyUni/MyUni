@@ -127,6 +127,4 @@ export async function postReviewPost(req, res) {
     return res.sendStatus(200);
 }
 
-export async function getReviewPost(req, res) {
-    
-}
+
