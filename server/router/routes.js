@@ -15,6 +15,7 @@ const EDIT_PROFILE = "/:id/edit"
 // const CONTENTS_VIDEO_LIST = "/videos";
 // const CONTENTS_VIDEO = "/video/:id";
 // const VIDEO_POST = "/video/post";
+const REVIEW_READ = "/review_read/:id";
 
 const CONVERTER = "/converter";
 const UNIVERSITY = "/university";
@@ -62,6 +63,14 @@ const routes = {
         }
     },
     editProfile: EDIT_PROFILE,
+
+    review_read: (id)=>{
+	    if(id){
+		    return `/review_read/$id}`;
+	    }  else {
+		    return REVIEW_READ;
+	    }
+    },
 
     api: API,
     converter: CONVERTER,

@@ -5,7 +5,7 @@ const ReviewPostSchema = new mongoose.Schema({
     body: String,
     author: String,
     password: String,
-    date: Date,
+    time: String,
 });
 
 const Review = mongoose.model("Review", ReviewPostSchema);

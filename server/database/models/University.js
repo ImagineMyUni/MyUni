@@ -42,7 +42,7 @@ UniversitySchema.statics.typeZero = async (kor, eng, his, math, society, science
             });
         })
         .catch(err => {
-            console.log(err);
+            console.log("typeZero", err);
             return {
                 university: "NULL",
                 converted: 0,
@@ -187,7 +187,6 @@ UniversitySchema.statics.typeFour = async function (kor = null, eng = null, his 
                 }
                 
                 let avg = hab / weightHab, converted;
-                console.log(avg, univ.university);
 
                 for (var i = 0; i < univ.standard.length; i++) {
                     if (avg >= univ.standard[i]) {

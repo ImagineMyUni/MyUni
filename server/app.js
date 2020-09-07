@@ -17,12 +17,13 @@ import './config/passport-setup';
 import apiRouter from './router/apiRouter';
 import contentsRouter from './router/contentsRouter';
 import dotenv from 'dotenv';
-
+import cors from 'cors';
 import { stream } from './config/winston';
 
 dotenv.config();
 
 const app = express();
+app.use(cors());
 const CookieStore = MongoStore(session);
 
 app.use(express.static('resource'));
