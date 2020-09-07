@@ -10,7 +10,7 @@ function str_to_int(req) {
      const {
         status, korean, english, math, society, science, history, choice
     } = req.query;
-
+	
     let st = parseInt(status, 10);
     let k = parseInt(korean, 10);
     let e = parseInt(english, 10);
@@ -74,12 +74,9 @@ export async function getEduVideo (req, res) {
 export async function getConversion(req, res) {
     const score = str_to_int(req);
     let result = [];
-    const contentOrigin = req.get('Origin');
-    if (contentOrigin != null)
-        res.set("Access-Control-Allow-Origin", contentOrigin);
-    else
-        res.set("Access-Control-Allow-Origin", "true");    
-    res.set("Access-Control-Allow-Credentials", "true");
+
+	res.set("Access-Control-Allow-Origin", "*");
+        res.set("Access-Control-Allow-Credentials", "true");
     res.set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
     res.set("Access-Control-Max-Age", "3600");
     res.set("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, remember-me");
@@ -92,7 +89,6 @@ export async function getConversion(req, res) {
     result.push(await University.typeThree(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
     result.push(await University.typeFour(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
     result.push(await University.typeFive(score.k, score.e, score.h, score.m, score.s, score.sc, score.c));
-
     return res.json({
         result
     });
@@ -116,14 +112,14 @@ export async function getReviewBoard(req, res) {
 
 export async function postReviewPost(req, res) {
     const {
-        title, body, author, password
+        title, body, author, password, time
     } = req.body;
 
-    const newPost = new Review({ title, body, author, password });
+    const newPost = new Review({ title, body, author, password, time });
+	console.log("new Post", newPost);
     newPost.save((err) => {
         if (err) {
             console.log(err);
-            re
         }
         
     });
