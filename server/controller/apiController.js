@@ -124,7 +124,24 @@ export async function postReviewPost(req, res) {
         
     });
 
-    return res.sendStatus(200);
+    return res.json({
+	    message: "Review save Successfully"
+    });
 }
 
 
+export async function getReviewPost(req, res) {
+    const {
+        id
+    } = req.query;
+    const text = await Review.findById({_id:id}, (err, data) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+
+        return data;
+    });
+
+    return res.json(text);
+}

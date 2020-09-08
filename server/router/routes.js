@@ -75,7 +75,7 @@ const routes = {
     // introduce_me_video: INTRODUCE_ME_VIDEO,
     // interview_video: INTERVIEW_VIDEO,
     
-    // // contents: CONTENTS,
+    contents: CONTENTS,
     // contents_video_list : CONTENTS_VIDEO_LIST,
     // contents_video: (id) => {
     //     if (id) {

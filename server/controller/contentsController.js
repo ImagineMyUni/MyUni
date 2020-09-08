@@ -118,19 +118,3 @@ export const postVideoPost = async (req, res) => {
 //         return res.redirect(routes.home);
 //     }
 // }
-export async function getReviewPost(req, res) {
-    const {
-        id
-    } = req.query;
-
-    const text = await Review.findById(id, (err, data) => {
-        if (err) {
-            console.log(err);
-            return;
-        }
-
-        return data;
-    });
-    console.log("text", text);
-    return res.json(text);
-}
