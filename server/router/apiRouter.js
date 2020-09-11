@@ -1,15 +1,12 @@
 import express from 'express';
 import routes from './routes';
-import { onlyPrivate } from '../middleware/auth';
-import { getEachConverter, getApplyStrategyVideo, getInterviewVideo, getIntroduceVideo, getEduVideo, getConversion, getReviewBoard, postReviewPost , getReviewPost} from '../controller/apiController';
-import mongoose from 'mongoose';
+// import { onlyPrivate } from '../middleware/auth';
+import {getEduVideo, getConversion, getReviewBoard, postReviewPost , getReviewPost} from '../controller/apiController';
 import 'mongoose-function';
-import University from '../database/models/University';
 
 const apiRouter = express.Router();
 
 apiRouter.get(routes.each_converter, getConversion);
-// apiRouter.get(routes.each_converter, getEachConverter);
 
 apiRouter.get(routes.edu_video, getEduVideo);
 apiRouter.get(routes.review_board, getReviewBoard);

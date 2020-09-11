@@ -17,14 +17,5 @@ const handleListening = () => {
     console.log(`Listening on : ${PORT}`);
 };
 
-// let options = {
-// 	key: fs.readFileSync('key/client-key.pem'),
-// 	cert: fs.readFileSync('key/client-cert.pem')
-// };
-// https.createServer(options, (req, res) => {
-// 	res.writeHead(200);
-// 	res.end("HELLO WORLD\n");
-// }).listen(3000);
-//https.createServer(options, app).listen(PORT);
 app.listen(PORT, handleListening);
 

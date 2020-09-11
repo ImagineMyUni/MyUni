@@ -1,16 +1,12 @@
 import University from '../database/models/University';
-import { kaya, kacheon, catholickwan, gangneung_wonju, kwangwon, daegu_catholic, dongeu, mockpo_haeyang, baeksuk, kyungki } from './converter/globalConverter';
-import Board from '../database/models/Board'
 import Video from '../database/models/Video';
 import Review from '../database/models/Review';
 
-var result = {};
 // 국 영 수 사회 과학 역사 선택
 function str_to_int(req) {
      const {
         status, korean, english, math, society, science, history, choice
     } = req.query;
-	
     let st = parseInt(status, 10);
     let k = parseInt(korean, 10);
     let e = parseInt(english, 10);
@@ -25,46 +21,8 @@ function str_to_int(req) {
     };
 }
 
-export function getEachConverter (req, res) {
-    // result = str_to_int(req);
-    // let convertedScoreList = [];
-    
-    // // Converted Score // 
-    // convertedScoreList.push(kaya(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
-    // convertedScoreList.push(kacheon(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
-    // convertedScoreList.push(catholickwan(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
-    // convertedScoreList.push(gangneung_wonju(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
-    // convertedScoreList.push(kwangwon(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
-    // convertedScoreList.push(daegu_catholic(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
-    // convertedScoreList.push(dongeu(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
-    // convertedScoreList.push(mockpo_haeyang(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
-    // convertedScoreList.push(baeksuk(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
-    // convertedScoreList.push(kyungki(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
-    // convertedScoreList.push(kwangwon(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
-    // convertedScoreList.push(kwangwon(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
-    // convertedScoreList.push(kwangwon(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
-    // convertedScoreList.push(kwangwon(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
-    // convertedScoreList.push(kwangwon(result.st, result.k, result.e, result.m, result.s, result.sc, result.h, result.c));
-    // return res.json({
-    //     convertedScoreList
-    // });
-}
-
 export async function getEduVideo (req, res) {
-    // const {
-    //     type
-    // } = req.query;
-
-    // const result = await Board.findAll(type);
-    // const message = (
-    //     type == 1 ? "Successfully Get Apply Strategy Video" : (
-    //         type == 2 ? "Successfully Get Introduce Video" :
-    //             "Successfully Get Interview Video"
-    //     )
-    // );
-
     const result = await Video.find({});
-    
     return res.json({
         result,
         // message
@@ -76,7 +34,7 @@ export async function getConversion(req, res) {
     let result = [];
 
 	res.set("Access-Control-Allow-Origin", "*");
-        res.set("Access-Control-Allow-Credentials", "true");
+    res.set("Access-Control-Allow-Credentials", "true");
     res.set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
     res.set("Access-Control-Max-Age", "3600");
     res.set("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, remember-me");
@@ -116,12 +74,10 @@ export async function postReviewPost(req, res) {
     } = req.body;
 
     const newPost = new Review({ title, body, author, password, time });
-	console.log("new Post", newPost);
     newPost.save((err) => {
         if (err) {
             console.log(err);
         }
-        
     });
 
     return res.json({

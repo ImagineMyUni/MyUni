@@ -1,24 +1,14 @@
 import express from 'express';
 import routes from './routes';
 import {
-    getLogin, postLogin, getJoin, postJoin,
-    getGoogleLogin, getLogout, postGoogleLogin, googleLogin, home, kakaoLogin, postKakaoLogin, naverLogin, postNaverLogin, facebookLogin, postFacebookLogin
+    getLogout, postGoogleLogin, googleLogin, kakaoLogin, postKakaoLogin, naverLogin, postNaverLogin, facebookLogin, postFacebookLogin
 } from '../controller/userController';
-import {  } from '../controller/contentsController';
 import passport from 'passport';
-import { onlyPublic, onlyPrivate, isAuthenticated } from '../middleware/auth';
+import { onlyPublic, onlyPrivate} from '../middleware/auth';
 
 const globalRouter = express.Router();
 
-// globalRouter.get(routes.home, home);
-
-// globalRouter.get(routes.login,onlyPublic, getLogin);
-// globalRouter.post(routes.login, postLogin);
-
-globalRouter.get(routes.logout, onlyPrivate,getLogout);
-
-// globalRouter.get(routes.join, onlyPublic, getJoin);
-// globalRouter.post(routes.join, postJoin);
+globalRouter.get(routes.logout, onlyPrivate, getLogout);
 
 globalRouter.get(routes.google, onlyPublic, googleLogin);
 globalRouter.get(routes.googleCallback, onlyPublic,
